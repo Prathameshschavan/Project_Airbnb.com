@@ -1,0 +1,104 @@
+ @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;500;600;700;800&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+*{
+    margin:0;
+    font-family:"Nunito Sans",sans-serif;
+}
+:root{
+    --grey:#ddd;
+    --white:#fff;
+    --black:#000;
+    --theme:#FF385C;
+}
+.navfront{
+    background-color:#F7F7F7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 21px;
+    border-bottom: 1px solid var(--grey);
+}
+.navfront h1{
+    font-size: 17px;
+    color: #222222;
+}
+.navfront a{
+    font-size: 17px;
+    font-weight: 700;
+    color: #222222;
+    padding-left: 13px;
+}
+.navfront span{
+    margin: 10px;
+}
+#navbar{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    position: sticky;
+    top: 0;
+}
+#navbarlogo{
+    height: 2.4rem;
+}
+.searchbar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.38rem .5rem;
+    border: 1px solid #dddddd;
+    border-radius: 1.7rem;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 7%);
+    transform: translate3d(0,0,0);
+}
+.searchbar:hover{
+    box-shadow: 0 3px 15px rgb(0 0 0 / 10%);
+}
+#searchbartext{
+    font-size: 0.92rem;
+    font-weight: 600;
+    border-right: 1px solid var(--grey);
+    padding: 0.5rem 1rem;
+    letter-spacing: .5px;
+}
+#searchbartext2 {
+    font-size: 0.92rem;
+    font-weight: 600;
+    padding-left: 0.5rem;
+    color: #717171;
+    letter-spacing: .5px;
+}
+.search-icon-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0.5rem;
+}
+#search-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    padding: 0.65rem;
+    color: var(--white);
+    background-color: var(--theme);
+    border-radius: 50%;
+}
+.profile-container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.75rem;
+}
+.airbnb-your{
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    border-radius: 2rem;
+    font-size: 1rem;
+}
+.airbnb-your:hover{
+    background-color:#f7f7f7;
+    cursor: pointer;
+    border-radius: 22px;
+}
