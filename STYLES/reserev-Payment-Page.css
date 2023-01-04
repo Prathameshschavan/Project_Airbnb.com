@@ -1,71 +1,128 @@
 body {
-    background-color: aliceblue;
+    margin: 0;
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-    ef
-    /* width: 100%; */
-    /* margin: 0%;
-    padding: 0%; */
+}
+
+#payment-header-ID {
+    display: flex;
+    justify-content: flex-start;
+    height: 70px;
+    border-bottom: solid rgb(225, 225, 225) 1px;
+}
+
+#payment-header-ID>div {
+    display: flex;
+    justify-content: center;
+    width: 15%;
+    align-items: center;
 }
 
 #payment-header-ID div img {
-    width: 75px;
+    width: 95px;
+    height: max-content;
+}
+
+#payment-body-ID {
+    margin-top: 2%;
 }
 
 .Confirm-And-Pay-class>div {
-
     width: 41%;
     display: flex;
     justify-content: center;
-    background-color: brown;
+    font-weight:
+        600;
+
+    align-items: center;
+    gap: 2%;
+    text-indent: 0px;
+}
+
+.Confirm-And-Pay-class a {
+    text-decoration: none;
+    color: black;
 }
 
 .Confirm-And-Pay-class>div>h1 {
     color: inherit !important;
-    font-size: 23px !important;
-    font-weight: 600;
+    font-size: 28px !important;
+    font-weight: 500;
 }
 
 
 #trip-payment-Main-DIV-ID {
-    background-color: aqua;
+    /* background-color: aqua; */
     display: flex;
     width: 100%;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 10%;
+
 }
 
 #left-trip-details-ID {
-    width: 25%;
-    background-color: blueviolet;
+    width: 35%;
+}
+
+.Same-trip-details-Class>div:first-child>p {
+
+    font-size: 18px;
+    font-weight: 400;
+    font-style: bold;
+
+}
+
+.date-and-guest-div-Class>div>div p:first-child {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.date-and-guest-div-Class>div>div p:nth-child(2) {
+    font-size: 14px;
+    font-weight: 300;
 }
 
 
 
 .date-and-guest-div-Class>div {
     display: flex;
-    background-color: rgb(225, 143, 20);
-    color: blue;
+    /* background-color: rgb(225, 143, 20); */
+    /* color: blue; */
     justify-content: space-between;
+    align-items: baseline;
     /* align-items: center; */
 }
 
+.date-and-guest-div-Class button {
+    /* background-color: yellowgreen; */
+    border: none;
+    background-color: inherit;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+/* right */
 
 #right-trip-details-ID {
-    width: 25%;
-    background-color: blueviolet;
+    width: 30%;
+    padding: 1%;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
 .stay-details-div-Class {
-    background-color: yellow;
+    /* background-color: yellow; */
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
+
 }
 
 .stay-details-div-Class img {
     width: 80%;
     margin: auto;
     align-items: center;
+    border-radius: 11px;
+
 }
 
 .stay-rent-and-tex-Class>div>div {
@@ -76,4 +133,18 @@ body {
 #show-total-payment-ID {
     display: flex;
     justify-content: space-between;
+}
+
+
+
+.secure-badge-class {
+    display: flex;
+    max-width: fit-content;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.secure-badge-class img {
+    width: 100%;
 }
