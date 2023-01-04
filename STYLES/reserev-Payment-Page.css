@@ -1,0 +1,79 @@
+body {
+    background-color: aliceblue;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    ef
+    /* width: 100%; */
+    /* margin: 0%;
+    padding: 0%; */
+}
+
+#payment-header-ID div img {
+    width: 75px;
+}
+
+.Confirm-And-Pay-class>div {
+
+    width: 41%;
+    display: flex;
+    justify-content: center;
+    background-color: brown;
+}
+
+.Confirm-And-Pay-class>div>h1 {
+    color: inherit !important;
+    font-size: 23px !important;
+    font-weight: 600;
+}
+
+
+#trip-payment-Main-DIV-ID {
+    background-color: aqua;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+#left-trip-details-ID {
+    width: 25%;
+    background-color: blueviolet;
+}
+
+
+
+.date-and-guest-div-Class>div {
+    display: flex;
+    background-color: rgb(225, 143, 20);
+    color: blue;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+
+#right-trip-details-ID {
+    width: 25%;
+    background-color: blueviolet;
+}
+
+.stay-details-div-Class {
+    background-color: yellow;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.stay-details-div-Class img {
+    width: 80%;
+    margin: auto;
+    align-items: center;
+}
+
+.stay-rent-and-tex-Class>div>div {
+    display: flex;
+    justify-content: space-between;
+}
+
+#show-total-payment-ID {
+    display: flex;
+    justify-content: space-between;
+}
