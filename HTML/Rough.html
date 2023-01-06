@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #Otp_Block{
+            border: 1px solid  black;
+            width: 38%;
+            margin: auto;
+            border-radius: 20px;
+            
+        }
+
+        #Otp_Block>div:first-child{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding:  0 35% 0 4%;
+            /* border: 2px solid  blue; */
+        }
+
+        #Otp_Block>div:first-child>i{
+            /* border: 1px solid red; */
+            padding: 7px 9px;
+            border-radius: 20px;
+        }
+
+        #Otp_Block>div:first-child>i:hover{
+            background-color: #eeeded;
+        }
+
+        #Otp_Block>div:nth-child(3){
+            padding-left:25px;
+            /* border: 2px solid  blue; */
+            font-size: 15px;
+        }
+
+        #Otp_Block>hr:nth-child(2){
+            margin:-10px 0  10px 0;
+        }
+
+        #Otp{
+            border-radius: 10px;
+            font-size: 18px;
+            width: 33%;
+            padding: 15px 0px;
+            letter-spacing:20px;
+           color: rgb(94, 93, 93);
+           font-weight: 500;
+           text-shadow: 0 0 0 #010101;
+        }
+
+      #Otp_Block>div:nth-child(3)>div{
+        display: flex;
+        align-items: center;
+        /* border: 1px solid #010101; */
+        margin-top: -15px;
+      }
+
+      #Otp_Block>div:nth-child(3)>p{
+        margin-bottom: 25px;
+      }
+
+      #Otp_Block>div:nth-child(5){
+        display: flex;
+        justify-content: space-between;
+        padding: 0 30px;
+        align-items: center;
+        margin-bottom: 12px;
+      }
+
+      #Otp_Block>div:nth-child(5)>button{
+        font-size: 20px;
+        padding: 15px 15px;
+        border-radius: 10px;
+        border: none;
+        color: white;
+        background-color: #303030;
+      }
+
+      #Otp_Block>div:nth-child(5)>button:hover{
+        background-color: #0c0c0c;
+      }
+    </style>
+</head>
+<body>
+
+    <div id="Otp_Block"> 
+        <div>
+            <i class="fa-solid fa-chevron-left"></i><h4>Confirm your number</h4>
+        </div>
+        <hr>
+        <div>
+            <p>
+                Enter the code we've sent via SMS to +91 9860208367:
+            </p>
+
+            <input type="text" maxlength="6"   name="" id="Otp" required>
+
+            <div><i class="fa-solid fa-circle-exclamation"></i> <p>Incorrect code. Please try again.</p></div>
+        </div>
+        <hr>
+        <div>
+            <p><u><b>More options</b></u></p>
+            <button>Continue</button>
+        </div>
+
+    </div>
+    
+</body>
+</html>
+<script>
+    function getOtp(min, max) {
+  return Math.random() * (max - min +1) + min;
+}
+
+ let ans =getOtp(100000,999999);
+console.log(ans.toFixed(0));
+</script>
+<script src="https://kit.fontawesome.com/fbdb99c49f.js" crossorigin="anonymous"></script>
