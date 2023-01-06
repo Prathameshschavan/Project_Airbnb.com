@@ -9,16 +9,17 @@
     <title>Book Your Stay</title>
     <script src="https://kit.fontawesome.com/1edefc8664.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=sans-serif">
-    <link rel="stylesheet" href="./../STYLES/reserev-Payment-Page.css">
+    <link rel="stylesheet" href="../../STYLES/Payment-Process/paymentHeader.css">
+    <link rel="stylesheet" href="./../../STYLES/Payment-Process/reserev-Payment-Page.css">
 
 </head>
 
 <body>
     <div>
         <div id="payment-header-ID">
-            <div>
+            <!-- <div>
                 <img src="https://imgpile.com/images/dwDX2S.png" alt="">
-            </div>
+            </div> -->
         </div>
         <section id="payment-body-ID">
 
@@ -69,8 +70,17 @@
                         </div>
 
                     </div>
-                    <div id="login-or-payment-parent-ID">
+                    <div id="login-or-guest-parent-ID">
 
+                        <div id="for-guest-ID">
+                            <p>Log in or Sign up to book</p>
+                            <div id="Continue-button-div-ID">
+                                <a href=""><button>Continue</button></a>
+                            </div>
+                            <div>
+                                <img src="https://imgpile.com/images/dRCXvl.png" alt="login-methods">
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -133,4 +143,23 @@
 
 </body>
 
+
 </html>
+
+<script type="module">
+    // Header Importing and Appending
+    import paymentHeader from "../../COMPONENTS/payment-process C/payment-Header.js";
+    let HeaderHere = document.getElementById("payment-header-ID");
+    HeaderHere.innerHTML = "";
+    HeaderHere.innerHTML = paymentHeader();
+
+    // Payment method importing for loged in User and appending
+    import paymentMethod from "../../COMPONENTS/payment-process C/payment-page-component.js";
+    console.log(paymentMethod);
+
+    let paymentContainer = document.getElementById("login-or-guest-parent-ID");
+    paymentContainer.innerHTML = "";
+    paymentContainer.innerHTML = paymentMethod();
+
+
+</script>
