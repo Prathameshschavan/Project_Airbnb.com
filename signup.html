@@ -8,6 +8,10 @@
     <script src="https://kit.fontawesome.com/074757cd11.js" crossorigin="anonymous"></script>
     <title>Document</title>
     <style>
+        * {
+            font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+        }
+
         .main {
             border: 2px solid blue;
             display: flex;
@@ -22,8 +26,8 @@
         .first {
             border: 2px solid firebrick;
             width: 40%;
-            padding-left: 25px;
-            padding-right: 25px;
+            padding-left: 30px;
+            padding-right: 0px;
             border-radius: 10px;
             /* overflow-x: hidden;
             overflow-y: scroll; */
@@ -57,16 +61,20 @@
             border-radius: 10px 10px 0 0;
         }
 
-        select option {
+        select {
             /* background-color: #f53c5e; */
-            font-size: 15px;
+            font-size: 17px;
+            padding-left: 20px;
+
         }
 
         .opt input {
-            width: 94%;
+            width: 91%;
             height: 55px;
             border-radius: 0 0 10px 10px;
             border: 1px solid gray;
+            padding-left: 20px;
+
         }
 
         ::placeholder {
@@ -101,7 +109,7 @@
             margin-bottom: 20px;
             border-radius: 10px;
             border: 1px solid black;
-            background-color: white; 
+            background-color: white;
             /* font-family:Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif; */
             /* font-size: 14px; */
             /* color: #222222; */
@@ -110,7 +118,7 @@
             line-height: 20px;
             color:red;      */
         }
-       
+
         .fb {
             display: flex;
         }
@@ -125,7 +133,7 @@
 
         }
 
-        #text > p {
+        #text>p {
             font-size: 12px;
             margin-top: 8px;
             margin-bottom: -10px;
@@ -180,7 +188,7 @@
                             <option value="19"></option>
                         </select>
                         <br>
-                        <input type="text" placeholder="Phone Number">
+                        <input id="loginnumber" type="text" placeholder="PhoneNumber">
                     </form>
 
                 </div>
@@ -190,11 +198,12 @@
                     <!-- <a href="https://www.airbnb.co.in/terms/privacy_policy?source=signup">PrivacyPolicy</a> -->
                     <p
                         style="font-size: 12px; color: #000000; font-weight: 600; font-style: normal; line-height: 16px;">
-                        <u>Privacy Policy</u></p>
+                        <u>Privacy Policy</u>
+                    </p>
                 </div>
 
                 <div class="cbt">
-                    <button>Continue</button>
+                    <button id="signinContinuebtn">Continue</button>
                 </div>
 
                 <div style="float:left; width: 44%; margin-right: 14px;">
@@ -242,3 +251,22 @@
 </body>
 
 </html>
+<script>
+    document.getElementById("signinContinuebtn").addEventListener("click", getData)
+    var numberArray = JSON.parse(localStorage.getItem("usernumbers")) || [];
+
+    function getData() {
+        var number = document.getElementById("loginnumber").value;
+        numberArray.push(number);
+        localStorage.setItem("usernumbers", JSON.stringify(numberArray));
+        let otp = getOtp(100000, 999999);
+        otp = otp.toFixed(0);
+        console.log(otp);
+        
+    }
+    function getOtp(min, max) {
+            return Math.random() * (max - min + 1) + min;
+        }
+          
+       
+</script>
