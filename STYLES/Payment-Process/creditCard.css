@@ -14,6 +14,8 @@
     border-radius: 4px;
     color: white;
     font-weight: 600;
+    background-image: linear-gradient(to right,
+            #ff585d 30%, #f1134b 51%);
 }
 
 .pay-now-button-a-tag-CLASS {

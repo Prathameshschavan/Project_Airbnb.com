@@ -16,7 +16,7 @@
 
 <body>
     <div>
-        <div id="payment-header-ID">
+        <div id="payment-header-ID" class="payment-header-Class">
             <!-- <div>
                 <img src="https://imgpile.com/images/dwDX2S.png" alt="">
             </div> -->
@@ -90,11 +90,12 @@
                         <div class="stay-details-div-Class">
                             <div><img
                                     src="https://a0.muscache.com/im/pictures/miso/Hosting-26117817/original/9da40e3c-5846-4359-bb41-05c27b09a8f5.jpeg?aki_policy=large"
-                                    alt=""></div>
+                                    alt="" id="stay-image-on-payment-ID"></div>
                             <div>
                                 <div>
                                     <p>Treehouse</p>
-                                    <p>Whispering Pines Cottages| TreeHouse| trip-payment-Main-DIV-ID</p>
+                                    <p id="stay-name-on-payment-ID">Whispering Pines Cottages| TreeHouse|
+                                        trip-payment-Main-DIV-ID</p>
                                 </div>
                                 <div>
                                     <p class="show-stay-ratings-Class">Rating: 4.90 </p>
@@ -128,7 +129,7 @@
                             <p>
                                 Total
                             </p>
-                            <p> ₹31,727.43 </p>
+                            <p id="total-onpayment-page-ID"> ₹31,727.43 </p>
                         </div>
                     </div>
                 </div>
@@ -139,7 +140,7 @@
         </section>
     </div>
 
-
+    <script src="../../SCRIPT/payment-process/reserve-payment-Main.js"></script>
 
 </body>
 
@@ -160,6 +161,17 @@
     let paymentContainer = document.getElementById("login-or-guest-parent-ID");
     paymentContainer.innerHTML = "";
     paymentContainer.innerHTML = paymentMethod();
+
+    // document.getElementById("ConfirmPayment-buttom-ID").addEventListener("click", function () {
+    //     window.location.href = "creditCard.html";
+    //     console.log("ramji");
+    // })
+
+</script>
+
+<script>
+
+
 
 
 </script>

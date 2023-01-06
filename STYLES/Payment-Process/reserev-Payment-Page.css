@@ -3,25 +3,6 @@ body {
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 }
 
-/* 
-#payment-header-ID {
-    display: flex;
-    justify-content: flex-start;
-    height: 70px;
-    border-bottom: solid rgb(225, 225, 225) 1px;
-}
-
-#payment-header-ID>div {
-    display: flex;
-    justify-content: center;
-    width: 11%;
-    align-items: center;
-}
-
-#payment-header-ID div img {
-    width: 95px;
-    height: max-content;
-} */
 
 #payment-body-ID {
     margin-top: 2%;
@@ -142,6 +123,8 @@ body {
     border-radius: 4px;
     color: white;
     font-weight: 600;
+    background-image: linear-gradient(to right,
+            #ff585d 30%, #f1134b 51%);
 
 }
 
@@ -194,6 +177,7 @@ body {
 #right-trip-details-ID {
     width: 30%;
     padding: 1%;
+    height: fit-content;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
@@ -248,8 +232,6 @@ body {
     justify-content: space-around;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-
-
 }
 
 .secure-badge-class img {

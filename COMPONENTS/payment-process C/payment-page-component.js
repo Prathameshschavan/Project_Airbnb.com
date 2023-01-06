@@ -20,7 +20,7 @@ const paymentMethod = () => {
                             </div>
 
                             <div id="Confirm&Pay-button-div-ID">
-                                <a href=""><button>Confirm & Pay</button></a>
+                                <a href="creditCard.html"><button id="ConfirmPayment-buttom-ID">Confirm & Pay</button></a>
                             </div>
 
                         </div>`
