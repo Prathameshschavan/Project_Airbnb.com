@@ -11,8 +11,21 @@ const Header=()=>{
     <div class="profile-container">
     <div class="airbnb-your">Airbnb your home</div>
     <div class="airbnb-your"><i class="fa-solid fa-globe"></i></div>
-    <div id="plofilediv"></div>
+    <div class="profileIcon">
+    <div id="profiletoggle"><i class="fa fa-bars"></i><span><i class="fa fa-user"></i></span></div>
+    <div id="profilemodal">
+    <div><a id="sign-button" class="button">Sign up</a></div>
+    <div><a href="">Log in</a></div>
+    </hr>
+    <div><a href="">Airbnb your home</a></div>
+    <div><a href="">Host an Experience</a></div>
+    <div><a href="">Help</a></div>
     </div>
-   `;
+  </div>
+  </div>
+</div>`; 
 }
-export default Header;
+  export{Header};
+  
+
+
