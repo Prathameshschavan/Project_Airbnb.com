@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         * {
+            font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+        }
+        .mainpage{
+            border: 2px solid blue;
+            display: flex;
+            /* margin-left: 20%; */
+            align-items: center;
+            justify-content: center;
+        }
+        #mainfirst{
+            border: 2px solid firebrick;
+            width: 40%;
+            padding-left: 30px;
+            padding-right: 0px;
+            border-radius: 10px;
+        }
+        #tophead{
+            text-align: center;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        #tophead h3{
+            margin-left: -120%;
+        }
+        #head{
+            width: 10%;
+            height: 25px;
+            margin-top: 20px;
+            border: none;
+            background-color: rgb(255, 255, 255);
+        }
+        #name{
+            width: 90%;
+            height: 55px;
+            border-radius: 10px 10px 0 0;
+            font-size: 17px;
+            padding-left: 20px;
+            border: 1px solid gray;
+
+        }
+        #last{
+            width: 90%;
+            height: 55px;
+            border-radius: 0 0 10px 10px;
+            border: 1px solid gray;
+            font-size: 17px;
+            padding-left: 20px;
+        }
+        #date, #lastbox{
+            width: 90%;
+            height: 55px;
+            border-radius: 10px;
+            border: 1px solid gray;
+            font-size: 17px;
+            padding-left: 20px;
+        }
+        #lastbox{
+
+
+        }
+        #registerbtn{
+            width: 95%;
+            height: 50px;
+            margin-top: 20px;
+            margin-bottom: 25px;
+            background-color: #f53c5e;
+            border-radius: 10px;
+            color: aliceblue;
+            font-size: 17px;
+            font-weight: 55px;
+            border: none;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="mainpage">
+        <div id="mainfirst">
+            <div id="tophead">
+                <button id="head" type="button"></button>
+                <h3>Finish Signing up</h3>
+            </div>
+            <hr style="width: 100%;">
+
+            <div id="box">
+                <input id="name" type="text" placeholder="first name">
+            </div>
+
+            <div id="secbox">
+                <input id="last" type="text" placeholder="last name">
+            </div>
+            <p>Make sure it maches the name on your goverment ID.</p>
+            <div id="dob">
+                <input id="date" type="number" placeholder="Date of birth">
+            </div>
+            
+            <p>To sign up, you need to be at least 18. your birth won't be shared with other people who use Airbnb.</p>
+            <div id="email">
+                <input id="lastbox" type="text" placeholder="Email">
+            </div>
+            <p>we'll email you trip conformations and receipts</p>
+            <p>By slecting Agree and Continue, i agree to Airbnb Term of Service, Payments Term of Service, and Nondiscrimination Policy and acknowledge the Privacy Policy.</p>
+            <div id="rbt">
+                <button id="registerbtn">Continue</button>
+            </div>
+            <hr>
+        </div>
+    </div>
+</body>
+</html>
