@@ -124,8 +124,13 @@ body {
     color: white;
     font-weight: 600;
     background-image: linear-gradient(to right,
-            #ff585d 30%, #f1134b 51%);
+            #ff585d 30%, #f44b75 51%);
 
+}
+
+#for-logedin-user-ID .applied {
+    background-image: linear-gradient(to right,
+            #58ffe9 30%, #5AFFFA 51%);
 }
 
 #for-logedin-user-ID img {

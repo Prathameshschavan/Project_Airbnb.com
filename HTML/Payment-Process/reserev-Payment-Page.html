@@ -33,7 +33,7 @@
 
                         <div>
 
-                            <a href="">
+                            <a href="./../index.html">
                                 <i class="fa-solid fa-angle-left fa-sm"></i>
                             </a>
                             <h1> Confirm And Pay </h1>
@@ -57,7 +57,8 @@
                                     <p>Dates</p>
                                     <p class="trip-date-Class">1-JAN-2023</p>
                                 </div>
-                                <div><button class="Edit-on-payment-page-Class">Edit</button></div>
+                                <div onclick="editBooking()"><button class="Edit-on-payment-page-Class">Edit</button>
+                                </div>
 
                             </div>
                             <div>
@@ -65,7 +66,8 @@
                                     <p>Guest</p>
                                     <p class="Number-of-guest-Class">1 guest</p>
                                 </div>
-                                <div><button class="Edit-on-payment-page-Class">Edit</button></div>
+                                <div onclick="editBooking()"><button class="Edit-on-payment-page-Class">Edit</button>
+                                </div>
                             </div>
                         </div>
 
@@ -75,10 +77,11 @@
                         <div id="for-guest-ID">
                             <p>Log in or Sign up to book</p>
                             <div id="Continue-button-div-ID">
-                                <a href=""><button>Continue</button></a>
+                                <a href="./../login.html"><button>Continue</button></a>
                             </div>
                             <div>
-                                <img src="https://imgpile.com/images/dRCXvl.png" alt="login-methods">
+                                <a href="./../login.html"><img src="https://imgpile.com/images/dRCXvl.png"
+                                        alt="login-methods"></a>
                             </div>
                         </div>
                     </div>
@@ -126,7 +129,7 @@
                             </div>
                         </div>
                         <div id="show-total-payment-ID">
-                            <p>
+                            <p id="totalORdiscount-onpayment-page-ID">
                                 Total
                             </p>
                             <p id="total-onpayment-page-ID"> ₹31,727.43 </p>
@@ -140,12 +143,19 @@
         </section>
     </div>
 
-    <script src="../../SCRIPT/payment-process/reserve-payment-Main.js"></script>
 
+    <script type="module" src="../../SCRIPT/payment-process/reserve-payment-Main.js">
+
+
+
+    </script>
 </body>
 
 
 </html>
+
+
+</script>
 
 <script type="module">
     // Header Importing and Appending
@@ -157,21 +167,70 @@
     // Payment method importing for loged in User and appending
     import paymentMethod from "../../COMPONENTS/payment-process C/payment-page-component.js";
     console.log(paymentMethod);
+    var findUser = localStorage.getItem("user_login") || false;
 
-    let paymentContainer = document.getElementById("login-or-guest-parent-ID");
-    paymentContainer.innerHTML = "";
-    paymentContainer.innerHTML = paymentMethod();
+    if (findUser == true) {
+        let paymentContainer = document.getElementById("login-or-guest-parent-ID");
+        paymentContainer.innerHTML = "";
+        paymentContainer.innerHTML = paymentMethod();
+    }
+
 
     // document.getElementById("ConfirmPayment-buttom-ID").addEventListener("click", function () {
     //     window.location.href = "creditCard.html";
     //     console.log("ramji");
     // })
 
+    //Promocode here 
+
+    import { totalAmount } from "../../SCRIPT/payment-process/reserve-payment-Main.js"
+    console.log(totalAmount);
+
+    let showPromoCodeInput = false;
+    if (showPromoCodeInput == false) {
+        var promoCodeDiv = document.getElementById("Coupon-code-div-ID");
+        promoCodeDiv.style.display = "none";
+    }
+
+    var promoCodeButton = document.getElementById("have-a-promo-code-a-ID");
+    promoCodeButton.addEventListener("click", addPromoCode);
+
+    function addPromoCode() {
+
+        promoCodeButton.textContent = "Apply Your Code";
+        promoCodeDiv.style.display = "block";
+        promoCodeButton.addEventListener("click", function () {
+
+            let inputValue = document.getElementById("Coupon-code-input-ID").value;
+            console.log("inpout : ", inputValue.toUpperCase())
+            if (inputValue.toUpperCase() == "NEWYEAR") {
+
+                const discountedAmount = totalAmount - (totalAmount / 100 * 10);
+
+                let pTagForTotal = document.getElementById("total-onpayment-page-ID");
+                pTagForTotal.textContent = "₹" + discountedAmount.toFixed(0);
+                pTagForTotal.style.fontSize = "27px";
+                pTagForTotal.style.fontWeight = "800";
+                pTagForTotal.style.color = "#FF5A5F";
+
+                document.getElementById("totalORdiscount-onpayment-page-ID").textContent = "Total After 10% Disount: "
+                document.getElementById("totalORdiscount-onpayment-page-ID").fontWeight = "600";
+
+                promoCodeButton.textContent = "Applied";
+                promoCodeButton.className = "applied";
+            }
+
+
+
+
+
+        });
+
+    }
 </script>
-
 <script>
-
-
-
-
+    var editBooking = function () {
+        console.log("alert(Sorry Dear User We Are Working On This Feature)");
+        alert("Sorry dear user we are working on this feature :(");
+    }
 </script>
