@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+        }
+
+        p {
+            font-size: 12px;
+            width: 95%;
+
+        }
+
+        u {
+            color: #2867cd;
+            font-weight: 600;
+        }
+
+
+        .mainpage {
+            /* border: 2px solid blue; */
+            display: flex;
+            /* margin-left: 20%; */
+            align-items: center;
+            justify-content: center;
+        }
+
+        #mainfirst {
+            border: 2px solid firebrick;
+            width: 40%;
+            /* padding-left: 30px; */
+            padding-right: 0px;
+            border-radius: 10px;
+        }
+
+        #tophead {
+            text-align: center;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            padding-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        #tophead h3 {
+            margin-left: -120%;
+        }
+
+        #head {
+            width: 10%;
+            height: 25px;
+            margin-top: 20px;
+            border: none;
+            background-color: rgb(255, 255, 255);
+
+        }
+
+        #name {
+            width: 90%;
+            height: 55px;
+            border-radius: 10px 10px 0 0;
+            font-size: 17px;
+            padding-left: 20px;
+            border: 1px solid gray;
+
+        }
+
+        #last {
+            width: 90%;
+            height: 55px;
+            border-radius: 0 0 10px 10px;
+            border: 1px solid gray;
+            font-size: 17px;
+            padding-left: 20px;
+        }
+
+        #date {
+            width: 87%;
+            height: 55px;
+            border-radius: 10px;
+            border: 1px solid gray;
+            font-size: 17px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        #lastbox {
+            width: 90%;
+            height: 55px;
+            border-radius: 10px;
+            border: 1px solid gray;
+            font-size: 17px;
+            padding-left: 20px;
+        }
+
+        /* #lastbox{
+
+
+        } */
+        #registerbtn {
+            width: 95%;
+            height: 50px;
+            margin-top: 20px;
+            margin-bottom: 25px;
+            background-color: #f53c5e;
+            border-radius: 10px;
+            color: aliceblue;
+            font-size: 17px;
+            font-weight: 55px;
+            border: none;
+        }
+        #inputsection{
+            padding-left: 30px;
+            padding-right: 10px;
+            /* border: 2px solid goldenrod; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mainpage">
+        <div id="mainfirst">
+            <div id="tophead">
+                <button id="head" type="button"><i class="fa-solid fa-angle-left"></i></button>
+                <h3>Finish Signing up</h3>
+            </div>
+            <div id="inputsection">
+
+                <div id="box">
+                    <input id="name" type="text" placeholder="first name">
+                </div>
+
+                <div id="secbox">
+                    <input id="last" type="text" placeholder="last name">
+                </div>
+
+                <p> Make sure it maches the name on your goverment ID.</p>
+
+                <div id="dob">
+                    <input id="date" type="date" placeholder="Date of birth">
+                </div>
+
+                <p>To sign up, you need to be at least 18. your birth won't be shared with other people who use Airbnb.
+                </p>
+
+                <div id="email">
+                    <input id="lastbox" type="text" placeholder="Email">
+                </div>
+
+                <p>We'll email you trip conformations and receipts.</p>
+                <p>By slecting <b>Agree and Continue</b> , i agree to Airbnb <u>Term of Service, Payments Term of
+                        Service,</u> and
+                    <u>Nondiscrimination Policy</u> and acknowledge the <u>Privacy Policy</u>.
+                </p>
+
+                <div id="rbt">
+                    <button id="registerbtn">Continue</button>
+                </div>
+
+                <hr style="margin-right: 30px;">
+                <p>Airbnb will send you members-only deals, insperation, merketing emails and push notification. <br>
+                    You can opt
+                    out of receiving these any time in your account settings or directly <br> from the marketing
+                    notification.
+                </p>
+                <div id="sqbox">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="https://kit.fontawesome.com/074757cd11.js" crossorigin="anonymous"></script>

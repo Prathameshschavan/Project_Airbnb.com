@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         * {
+            font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+        }
+
+        .main {
+            /* border: 2px solid blue; */
+            display: flex;
+            /* margin-left: 20%; */
+            align-items: center;
+            justify-content: center;
+
+
+
+        }
+
+        .first {
+            border: 2px solid firebrick;
+            width: 40%;
+            padding-left: 30px;
+            padding-right: 0px;
+            border-radius: 10px;
+            /* overflow-x: hidden;
+            overflow-y: scroll; */
+
+
+        }
+
+        #top {
+            /* border: 2px solid red; */
+            text-align: center;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        #top h3 {
+            margin-left: -120%;
+        }
+
+        #bt {
+            width: 10%;
+            height: 25px;
+            margin-top: 20px;
+            border: none;
+            background-color: rgb(255, 255, 255);
+
+        }
+
+        .form {
+            width: 95%;
+            height: 55px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        select {
+            /* background-color: #f53c5e; */
+            font-size: 17px;
+            padding-left: 20px;
+
+        }
+
+        .opt input {
+            width: 91%;
+            height: 55px;
+            border-radius: 0 0 10px 10px;
+            border: 1px solid gray;
+            padding-left: 20px;
+
+        }
+
+        ::placeholder {
+            font-size: 16px;
+            padding-left: 10px;
+
+        }
+
+        .cbt button {
+            /* border: 2px solid sienna; */
+            width: 95%;
+            height: 50px;
+            margin-top: 20px;
+            margin-bottom: 25px;
+            background-color: #f53c5e;
+            border-radius: 10px;
+            color: aliceblue;
+            font-size: 17px;
+            font-weight: 55px;
+            border: none;
+
+        }
+
+        .log {
+            /* border: 2px solid seagreen; */
+            margin-top: 20px;
+        }
+
+        .fb button {
+            width: 95%;
+            height: 50px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border: 1px solid black;
+            background-color: white;
+            /* font-family:Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif; */
+            /* font-size: 14px; */
+            /* color: #222222; */
+            /* font-weight: bold;
+            font-style: normal;
+            line-height: 20px;
+            color:red;      */
+        }
+
+        .fb {
+            display: flex;
+        }
+
+        #sign {
+            height: 30px;
+            width: 6%;
+
+            border-radius: 50%;
+            margin: 1% 30% 0 -60%;
+
+
+        }
+
+        #text>p {
+            font-size: 12px;
+            margin-top: 8px;
+            margin-bottom: -10px;
+            line-height: 16px;
+            color: #222222;
+            font-weight: 400;
+            font-style: normal;
+            font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="main">
+        <div class="first">
+            <div id="top">
+                <button id="bt" type="button">X</button>
+                <h3
+                    style="font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif; font-size: 16px; color: #222222; font-weight: 600; font-style: normal; line-height: 22px;">
+                    Log in or Sign up
+
+                </h3>
+            </div>
+            <hr style="width: 100%;">
+            <div class="mid">
+                <h2
+                    style="font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif; font-size: 22px; color: #222222; font-weight: 600; font-style: normal; line-height: 26px; ">
+                    Welcome to Airbnb</h2>
+                <div class="opt">
+
+                    <form>
+                        <!-- <label for="select">cunotry/Rigion</label> -->
+                        <select class="form" aria-label="Default select example">
+                            <option selected>United States(+1)</option>
+                            <option value="1"></option>
+                            <option value="2"></option>
+                            <option value="4"></option>
+                            <option value="5"></option>
+                            <option value="6"></option>
+                            <option value="7"></option>
+                            <option value="8"></option>
+                            <option value="9"></option>
+                            <option value="10"></option>
+                            <option value="12"></option>
+                            <option value="13"></option>
+                            <option value="14"></option>
+                            <option value="15"></option>
+                            <option value="16"></option>
+                            <option value="17"></option>
+                            <option value="18"></option>
+                            <option value="19"></option>
+                        </select>
+                        <br>
+                        <input id="loginnumber" type="text" placeholder="PhoneNumber">
+                    </form>
+
+                </div>
+
+                <div id="text">
+                    <p>We'll call or text you to confirm your number. Standard message and data rates apply.</p>
+                    <!-- <a href="https://www.airbnb.co.in/terms/privacy_policy?source=signup">PrivacyPolicy</a> -->
+                    <p
+                        style="font-size: 12px; color: #000000; font-weight: 600; font-style: normal; line-height: 16px;">
+                        <u>Privacy Policy</u>
+                    </p>
+                </div>
+
+                <div class="cbt">
+                    <button id="signinContinuebtn">Continue</button>
+                </div>
+
+                <div style="float:left; width: 44%; margin-right: 14px;">
+                    <hr />
+                </div>
+                <div style="float:right; width: 43%; margin-right: 33px;">
+                    <hr />
+                </div>
+                or
+
+                <div class="log">
+                    <div class="fb">
+                        <button><img id="sign"
+                                src="https://media.licdn.com/dms/image/C560BAQEX1GeM25ratg/company-logo_200_200/0/1654767414210?e=2147483647&v=beta&t=rNj2d3wfmVTT2wtEiV857pDHaIZw0sBVok7Ya9QyCnc"
+                                alt=""></button>
+                        <span style="padding-top: 15px; margin-left: -60%;">Continue with Facebook</span>
+                    </div>
+                    <div class="fb">
+
+                        <button> <img id="sign"
+                                src="data:image/png;base64,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"
+                                alt="">
+                        </button><span style="padding-top: 15px; margin-left: -60%;">Continue with Google</span>
+                    </div>
+                    <div class="fb">
+
+                        <button><img id="sign"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS51yW-4jnASQx5qe12Y6Hs3MI6k241Y3a9ug&usqp=CAU"
+                                alt=""> </button>
+                        <span style="padding-top: 15px; margin-left: -60%;">Continue with Apple</span>
+                    </div>
+                    <div class="fb">
+
+                        <button><img id="sign"
+                                src="data:image/png;base64,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"
+                                alt=""></button>
+                        <span style="padding-top: 15px; margin-left: -60%;">Continue with Email</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
