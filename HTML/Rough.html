@@ -46,7 +46,7 @@
             border-radius: 10px;
             font-size: 18px;
             width: 33%;
-            padding: 15px 0px;
+            padding: 15px ;
             letter-spacing:20px;
            color: rgb(94, 93, 93);
            font-weight: 500;
@@ -54,10 +54,12 @@
         }
 
       #Otp_Block>div:nth-child(3)>div{
-        display: flex;
+        display: none;
         align-items: center;
         /* border: 1px solid #010101; */
-        margin-top: -15px;
+        margin-top: -10px;
+        color: red ;
+        gap: 10px;
       }
 
       #Otp_Block>div:nth-child(3)>p{
@@ -84,6 +86,8 @@
       #Otp_Block>div:nth-child(5)>button:hover{
         background-color: #0c0c0c;
       }
+
+      
     </style>
 </head>
 <body>
@@ -98,14 +102,17 @@
                 Enter the code we've sent via SMS to +91 9860208367:
             </p>
 
-            <input type="text" maxlength="6"   name="" id="Otp" required>
+            <input type="text" maxlength="6" placeholder="______"  name="" id="Otp" required>
 
-            <div><i class="fa-solid fa-circle-exclamation"></i> <p>Incorrect code. Please try again.</p></div>
+            <div id="error" >
+                <i class="fa-solid fa-circle-exclamation"></i>
+                 <p>Incorrect code. Please try again.</p>
+                </div>
         </div>
         <hr>
         <div>
             <p><u><b>More options</b></u></p>
-            <button>Continue</button>
+            <button id="otp_continue_btn">Continue</button>
         </div>
 
     </div>
@@ -113,6 +120,21 @@
 </body>
 </html>
 <script>
+
+    document.getElementById("otp_continue_btn").addEventListener("click",getOTP);
+
+    function getOTP(){
+        let otp = 123456;
+
+        let input = document.getElementById("Otp").value;
+
+        if(input==otp){
+
+        }
+        else{
+           document.getElementById("error").style.display="flex"
+        }
+    }
     function getOtp(min, max) {
   return Math.random() * (max - min +1) + min;
 }
