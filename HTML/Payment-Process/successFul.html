@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Succesful</title>
+
+    <link rel="stylesheet" href="../../STYLES/Payment-Process/paymentHeader.css">
+
+    <style>
+        #success-message-parent-ID {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #success-order-details-ID {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #success-message-parent-ID>div:first-child {
+            padding-top: 13px;
+            padding-bottom: 13px;
+            color: white;
+            margin: 2%;
+            border: 1px solid white;
+            background-color: #ff6e72;
+            background-image: linear-gradient(to right,
+                    #ff585d 30%, #f1134b 51%);
+            border-radius: 8px;
+            display: block;
+            text-size-adjust: 100%;
+            box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+        }
+
+        #success-message-parent-ID>div>p:first-child {
+            /* color: rgba(0, 15, 29, 0.92); */
+            font-family: "Source Sans Pro", sans-serif;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 23px;
+            letter-spacing: 0.54px;
+            text-align: center;
+            text-size-adjust: 100%;
+            padding: 1%;
+        }
+
+
+        .success-order-status-CLASS {
+            margin: 0px;
+            color: rgb(0, 19, 37);
+            font-family: "Source Sans Pro", sans-serif;
+            font-size: 34px;
+            font-weight: 600;
+            line-height: 40px;
+            letter-spacing: -0.25px;
+            text-align: left;
+            padding-bottom: 8px;
+            text-size-adjust: 100%;
+        }
+
+        .success-order-id-CLASS {
+            color: rgba(0, 15, 29, 0.92);
+            font-family: "Source Sans Pro", sans-serif;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0.25px;
+            text-align: left;
+            padding-bottom: 8px;
+            text-size-adjust: 100%;
+        }
+
+        #successs-cntn-a-tag-ID {
+            color: #ff6e72;
+            font-family: "Source Sans Pro", sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.25px;
+            text-align: center;
+            text-decoration: none;
+            text-size-adjust: 100%;
+        }
+
+        .centerSUCCESS {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            width: auto;
+        }
+
+        #success-amount-paid-ID {
+            padding-top: 13px;
+            padding-bottom: 13px;
+            border: 1px solid rgba(238, 238, 238, 0.16);
+            background-color: rgba(204, 204, 204, 0.86);
+            border-radius: 8px;
+            display: block;
+            /* text-size-adjust: 100%; */
+            width: 43%;
+            text-align: center;
+            margin-bottom: 4%;
+            box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+            background-color: #ff6e72;
+            background-image: linear-gradient(to right,
+                    #ff585d 30%, #f1134b 51%);
+            border: 1px solid white;
+            color: white;
+
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <div id="successful-header-ID" class="payment-header-Class">
+        <!-- <div>
+                    <img src="https://imgpile.com/images/dwDX2S.png" alt="">
+                </div> -->
+    </div>
+
+    <div id="success-message-parent-ID">
+        <div>
+            <p>
+                Thank you for using Airbnb!
+            </p>
+        </div>
+        <div id="success-order-details-ID">
+            <div>
+                <img class="centerSUCCESS" src="https://cdn-icons-png.flaticon.com/512/7518/7518748.png" height="80px"
+                    alt="">
+                <p class="success-order-status-CLASS">Booking Confirmed!</p>
+            </div>
+            <p class="success-order-id-CLASS">We are pleased to confirm your Booking Slot no.#AIRBNB-133264247-2945208
+            </p>
+            <div id="success-amount-paid-ID">
+                <p>Amount Paid <span id="success-order-value-ID"> </span> </p>
+            </div>
+            <a href="" id=successs-cntn-a-tag-ID>Redirecting You to in 3 Second</a>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    // item total value calculation AFTER OR WITHOUT PROMOCODE
+    window.onload = (event) => {
+
+        setTimeout(function () {
+            window.location.href = "index.html";
+        }, 5000)
+
+
+    };
+    console.log("ram");
+
+</script>
+
+<script type="module">
+    // Header Importing and Appending
+    import paymentHeader from "../../COMPONENTS/payment-process C/payment-Header.js";
+    let HeaderHere = document.getElementById("successful-header-ID");
+    HeaderHere.innerHTML = "";
+    HeaderHere.innerHTML = paymentHeader();
+
+</script>

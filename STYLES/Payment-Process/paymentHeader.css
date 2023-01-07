@@ -1,0 +1,18 @@
+.payment-header-Class {
+    display: flex;
+    justify-content: flex-start;
+    height: 70px;
+    border-bottom: solid rgb(225, 225, 225) 1px;
+}
+
+.payment-header-Class>div {
+    display: flex;
+    justify-content: center;
+    width: 11%;
+    align-items: center;
+}
+
+.payment-header-Class div img {
+    width: 95px;
+    height: max-content;
+}

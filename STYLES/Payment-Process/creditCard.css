@@ -1,0 +1,24 @@
+.col-md-6 {
+    width: 100%;
+    justify-content: center;
+}
+
+.pay-now-payment-page-button-CLASS {
+    margin-bottom: 5%;
+    margin-top: 5%;
+    width: 100%;
+    height: 40px;
+    font-size: small;
+    background-color: #e1195f;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: 600;
+    background-image: linear-gradient(to right,
+            #ff585d 30%, #f1134b 51%);
+}
+
+.pay-now-button-a-tag-CLASS {
+    text-decoration: none;
+    color: white;
+}
