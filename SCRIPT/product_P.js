@@ -234,12 +234,17 @@ let Castel = JSON.parse(localStorage.getItem("Castel")) || [];
 
 var wishlist_data = JSON.parse(localStorage.getItem("wishlist"))|| [];
 function append( Data){
-Data.forEach(ele => {
+Data.map((ele,idx) => {
+
+    
 var div = document.createElement("div");
 div.setAttribute("id", "div_forimg_dname")
-
+if(idx==0){
+    div.setAttribute("class", "first_card")      
+}
 
  var img1 = document.createElement("img");
+ img1.setAttribute("class","card_img_product")
  img1.src = ele.image1;
  img1.addEventListener("click", function(){
     localStorage.setItem("detail_data",JSON.stringify(ele));
@@ -340,12 +345,21 @@ else if(ele.wishlist=="true"){
 
  document.getElementById("product_page_main_div").append(div);
 
+ document.querySelector(".first_card").addEventListener("click",function(){
+    localStorage.setItem("detail_data",JSON.stringify(ele));
+    window.location.href="detail.html";
+})
 
 });
     
 }
 
-
+document.getElementById("content").style.overflow="hidden";
     
 
+
+// document.querySelector("#first_card").addEventListener("click",function(){
+   
+// })
 append(Amazing_view);
+
