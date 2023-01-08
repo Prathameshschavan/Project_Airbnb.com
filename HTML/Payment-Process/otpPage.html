@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP</title>
+    <link rel="icon" type="image/png" href="https://a0.muscache.com/airbnb/static/icons/android-icon-192x192-c0465f9f0380893768972a31a614b670.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../../STYLES/Payment-Process/paymentHeader.css">
+
+    <style>
+        body {
+            background-color: rgb(255, 255, 255)
+        }
+
+        #otp-header-ID {
+            margin-bottom: -5%;
+        }
+
+        .height-100 {
+            height: 100vh
+        }
+
+        .card {
+            width: 400px;
+            border: none;
+            height: 300px;
+            box-shadow: 0px 5px 20px 0px #d2dae3;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+
+        .card h6 {
+            color: #e1195f;
+            font-size: 20px
+        }
+
+        .inputs input {
+            width: 40px;
+            height: 40px
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            margin: 0
+        }
+
+        .card-2 {
+            background-color: #fff;
+            padding: 10px;
+            width: 350px;
+            height: 100px;
+            bottom: -50px;
+            left: 20px;
+            position: absolute;
+            border-radius: 5px
+        }
+
+        .card-2 .content {
+            margin-top: 50px
+        }
+
+        .card-2 .content a {
+            color: #e1195f
+        }
+
+        .form-control:focus {
+            box-shadow: none;
+            border: 2px solid #e1195f
+        }
+
+        .validate {
+            border-radius: 20px;
+            height: 40px;
+            background-color: #e1195f;
+            border: 1px solid #FC2779;
+            width: 140px;
+
+            background-image: linear-gradient(to right,
+                    #ff585d 30%, #f1134b 51%);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="otp-header-ID" class="payment-header-Class">
+        <!-- <div>
+                    <img src="https://imgpile.com/images/dwDX2S.png" alt="">
+                </div> -->
+    </div>
+
+    <div class="container height-100 d-flex justify-content-center align-items-center">
+        <div class="position-relative">
+            <div class="card p-2 text-center">
+                <h6>Please enter the one time password <br> to verify your account</h6>
+                <div> <span>A code has been sent to</span> <small>*******9897</small> </div>
+                <div id="otp" class="inputs d-flex flex-row justify-content-center mt-2"> <input
+                        class="m-2 text-center form-control rounded" type="text" id="first" maxlength="1" /> <input
+                        class="m-2 text-center form-control rounded" type="text" id="second" maxlength="1" /> <input
+                        class="m-2 text-center form-control rounded" type="text" id="third" maxlength="1" /> <input
+                        class="m-2 text-center form-control rounded" type="text" id="fourth" maxlength="1" /> <input
+                        class="m-2 text-center form-control rounded" type="text" id="fifth" maxlength="1" /> <input
+                        class="m-2 text-center form-control rounded" type="text" id="sixth" maxlength="1" /> </div>
+                <div class="mt-4"> <button id="OTP-button-ID" class="btn  px-4 validate"><a
+                            style="text-decoration: none ; color:#fff;  " class="">Validate
+                            OTP</a></button>
+                </div>
+
+            </div>
+            <div class="card-2">
+                <div class="content d-flex justify-content-center align-items-center"> <span>Didn't get the code</span>
+                    <a href="#" class="text-decoration-none ms-3">Resend(1/3)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+
+        function getOtp(min, max) {
+            return Math.random() * (max - min + 1) + min;
+        }
+
+        let MyNewOtp = getOtp(100000, 999999).toFixed(0);
+        console.log("My Otp: ", MyNewOtp);
+
+        setTimeout(function(){
+            if (confirm(`Your otp for Payment Confirmation Is: ${MyNewOtp}`) == false) {
+            location.replace("creditCard.html");
+        }
+        },3000)
+        
+
+        function OTPInput() {
+            const inputs = document.querySelectorAll('#otp > *[id]');
+            for (let i = 0; i < inputs.length; i++) {
+                inputs[i].addEventListener('keydown', function (event) {
+                    if (event.key === "Backspace") {
+                        inputs[i].value = '';
+                        if (i !== 0) inputs[i - 1].focus();
+                    } else {
+                        if (i === inputs.length - 1 && inputs[i].value !== '') {
+                            return true;
+                        } else if (event.keyCode > 47 && event.keyCode < 58) {
+                            inputs[i].value = event.key;
+                            if (i !== inputs.length - 1) inputs[i + 1].focus();
+                            event.preventDefault();
+                        } else if (event.keyCode > 64 && event.keyCode < 91) {
+                            inputs[i].value = String.fromCharCode(event.keyCode);
+                            if (i !== inputs.length - 1) inputs[i + 1].focus();
+                            event.preventDefault();
+                        }
+                    }
+                });
+            }
+        }
+        OTPInput();
+
+        document.getElementById("OTP-button-ID").addEventListener("click", checkOtpValue);
+
+        function checkOtpValue() {
+            var OTPbtn = document.getElementById("OTP-button-ID");
+            OTPbtn.style.backgroundColor = "red";
+            var otpTrue = false;
+
+
+
+            if (document.getElementById("first").value == MyNewOtp.charAt(0) && (document.getElementById("second").value == MyNewOtp.charAt(1)) && (document.getElementById("third").value == MyNewOtp.charAt(2)) && (document.getElementById("fourth").value == MyNewOtp.charAt(3)) && (document.getElementById("fifth").value == MyNewOtp.charAt(4)) && (document.getElementById("sixth").value == MyNewOtp.charAt(5))) {
+                otpTrue = true;
+            }
+            else {
+                otpTrue = false;
+                alert("Wrong Otp");
+            }
+
+            if (otpTrue) {
+                OTPbtn.style.backgroundColor = "green";
+                const myTimeout = setTimeout(myGreeting, 2000);
+                function myGreeting() {
+                    alert("Payment SuccessFul Redirecting....");
+                    location.replace("successFul.html");
+                }
+            }
+
+        }
+
+
+
+
+    });
+</script>
+<script type="module">
+    // Header Importing and Appending
+    import paymentHeader from "../../COMPONENTS/payment-process C/payment-Header.js";
+    let HeaderHere = document.getElementById("otp-header-ID");
+    HeaderHere.innerHTML = "";
+    HeaderHere.innerHTML = paymentHeader();
+
+</script>

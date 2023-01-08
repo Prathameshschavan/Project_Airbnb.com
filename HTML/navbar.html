@@ -41,7 +41,7 @@
 
       </div>
 
-      <div class=" bg-modal">
+      <div class="bg-modal">
         <div class=" content-modal">
           <div id="top">
             <button id="bt" class="close" type="button">X</button>
@@ -90,7 +90,7 @@
             </div>
 
             <div class="cbt">
-              <button id="signinContinuebtn">Continue</button>
+              <button id="signinContinuebtn" class="otpbutton" >Continue</button>
             </div>
             <div id="signborder">
 
@@ -120,13 +120,92 @@
 
                 <button><img id="sign"
                     src="data:image/png;base64,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"
-                    alt=""> <span id="socialicon">Continue with Email</span></button>
+                    alt=""><span id="socialicon">Continue with Email</span></button>
 
               </div>
             </div>
           </div>
         </div>
       </div>
+<!-- ----------otp page-------------- -->
+      <div id="Otp_Block">
+        <div class="otp-modal">
+          <button id="" class="closeotp" type="">X</button>
+          <i class="fa-solid fa-chevron-left"></i>
+          <h4>Confirm your number</h4>
+          <div>
+            <p>
+              Enter the code we've sent via SMS to +91 9860208367:
+            </p>
+            <input type="text" maxlength="6" placeholder="______" name="" id="Otp" required>
+            <div id="error">
+              <i class="fa-solid fa-circle-exclamation"></i>
+              <p>Incorrect code. Please try again.</p>
+            </div>
+          </div>
+          <hr>
+       
+          <hr>
+          <div>
+            <p><u><b>More options</b></u></p>
+            <button id="otp_continue_btn">Continue</button>
+          </div>
+        </div>
+       
+      </div>
+
+      <!-- ---------------registerFinish -->
+      <div class="mainpage">
+        <div id="mainfirst">
+            <div id="tophead">
+                <button id="head" type="button" class="closeregister"><i class="fa-solid fa-angle-left"></i></button>
+                <h3>Finish Signing up</h3>
+            </div>
+            <div id="inputsection">
+
+                <div id="box">
+                    <input id="name" type="text" placeholder="first name">
+                </div>
+
+                <div id="secbox">
+                    <input id="last" type="text" placeholder="last name">
+                </div>
+
+                <p> Make sure it maches the name on your goverment ID.</p>
+
+                <div id="dob">
+                    <input id="date" type="date" placeholder="Date of birth">
+                </div>
+
+                <p>To sign up, you need to be at least 18. your birth won't be shared with other people who use Airbnb.
+                </p>
+
+                <div id="email">
+                    <input id="lastbox" type="text" placeholder="Email">
+                </div>
+
+                <p>We'll email you trip conformations and receipts.</p>
+                <p>By slecting <b>Agree and Continue</b> , i agree to Airbnb <u>Term of Service, Payments Term of
+                        Service,</u> and
+                    <u>Nondiscrimination Policy</u> and acknowledge the <u>Privacy Policy</u>.
+                </p>
+
+                <div id="rbt">
+                    <button id="registerbtn">Continue</button>
+                </div>
+
+                <hr style="margin-right: 30px;">
+                <p>Airbnb will send you members-only deals, insperation, merketing emails and push notification. <br>
+                    You can opt
+                    out of receiving these any time in your account settings or directly <br> from the marketing
+                    notification.
+                </p>
+                <div id="sqbox">
+
+                </div>
+            </div>
+        </div>
+    </div>
 
       <div id="navlinks">
         <div id="navlinkcontainer">
@@ -411,6 +490,24 @@
     document.querySelector('.bg-modal').style.display = 'none';
   });
 
+  document.getElementById('signinContinuebtn').addEventListener('click', function () {
+    document.querySelector('#Otp_Block').style.display = 'flex';
+    document.querySelector('.bg-modal').style.display = 'none';
+  });
+
+  document.querySelector('.closeotp').addEventListener('click', function () {
+    document.querySelector('#Otp_Block').style.display = 'none';
+  });
+  document.getElementById('otp_continue_btn').addEventListener('click', function () {
+    document.querySelector('.mainpage').style.display = 'flex';
+    document.querySelector('#Otp_Block').style.display = 'none';
+  });
+
+  document.querySelector('.closeregister').addEventListener('click', function () {
+    document.querySelector('.mainpage').style.display = 'none';
+  });
+  
+  // ----------------signup---------------------------------
   document.getElementById("signinContinuebtn").addEventListener("click", getData)
   var numberArray = JSON.parse(localStorage.getItem("usernumbers")) || [];
 
@@ -426,6 +523,26 @@
   function getOtp(min, max) {
     return Math.random() * (max - min + 1) + min;
   }
+// ----------otp page-----------------------------------------
+document.getElementById("otp_continue_btn").addEventListener("click",getOTP);
 
+    function getOTP(){
+        let otp = 123456;
+
+        let input = document.getElementById("Otp").value;
+
+        if(input==otp){
+
+        }
+        else{
+           document.getElementById("error").style.display="flex"
+        }
+    }
+    function getO(min, max) {
+  return Math.random() * (max - min +1) + min;
+}
+
+ let ans =getO(100000,999999);
+console.log(ans.toFixed(0));
 </script>
 <script src="../script/index.js"></script>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Stay</title>
+    <script src="https://kit.fontawesome.com/1edefc8664.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=sans-serif">
+    <link rel="stylesheet" href="../../STYLES/Payment-Process/paymentHeader.css">
+    <link rel="stylesheet" href="./../../STYLES/Payment-Process/reserev-Payment-Page.css">
+    <link rel="icon" type="image/png" href="https://a0.muscache.com/airbnb/static/icons/android-icon-192x192-c0465f9f0380893768972a31a614b670.png">
+
+</head>
+
+<body>
+    <div>
+        <div id="payment-header-ID" class="payment-header-Class">
+            <!-- <div>
+                <img src="https://imgpile.com/images/dwDX2S.png" alt="">
+            </div> -->
+        </div>
+        <section id="payment-body-ID">
+
+            <div class="page-title-CLASS">
+                <div></div>
+                <div>
+                    <div>
+
+                    </div>
+                    <div class="Confirm-And-Pay-class">
+
+                        <div>
+
+                            <a href="./../index.html">
+                                <i class="fa-solid fa-angle-left fa-sm"></i>
+                            </a>
+                            <h1> Confirm And Pay </h1>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="trip-payment-Main-DIV-ID">
+
+                <div id="left-trip-details-ID">
+
+                    <div class="Same-trip-details-Class">
+                        <div>
+                            <p>Your trip</p>
+                        </div>
+                        <div class="date-and-guest-div-Class">
+                            <div>
+                                <div>
+                                    <p>Dates</p>
+                                    <p class="trip-date-Class">1-JAN-2023</p>
+                                </div>
+                                <div onclick="editBooking()"><button class="Edit-on-payment-page-Class">Edit</button>
+                                </div>
+
+                            </div>
+                            <div>
+                                <div>
+                                    <p>Guest</p>
+                                    <p class="Number-of-guest-Class">1 guest</p>
+                                </div>
+                                <div onclick="editBooking()"><button class="Edit-on-payment-page-Class">Edit</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="login-or-guest-parent-ID">
+
+                        <div id="for-guest-ID">
+                            <p>Log in or Sign up to book</p>
+                            <div id="Continue-button-div-ID">
+                                <a href="./../login.html"><button>Continue</button></a>
+                            </div>
+                            <div>
+                                <a href="./../login.html"><img src="https://imgpile.com/images/dRCXvl.png"
+                                        alt="login-methods"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="right-trip-details-ID">
+                    <div>
+                        <div class="stay-details-div-Class">
+                            <div><img
+                                    src="https://a0.muscache.com/im/pictures/miso/Hosting-26117817/original/9da40e3c-5846-4359-bb41-05c27b09a8f5.jpeg?aki_policy=large"
+                                    alt="" id="stay-image-on-payment-ID"></div>
+                            <div>
+                                <div>
+                                    <p>Treehouse</p>
+                                    <p id="stay-name-on-payment-ID">Whispering Pines Cottages| TreeHouse|
+                                        trip-payment-Main-DIV-ID</p>
+                                </div>
+                                <div>
+                                    <p class="show-stay-ratings-Class">Rating: 4.90 </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="secure-badge-class">
+                            <img src="https://imgpile.com/images/d5Mkyi.png" alt="">
+                        </div>
+
+                        <div class="stay-rent-and-tex-Class">
+                            <div>
+                                <p>Price Details</p>
+                            </div>
+                            <div>
+                                <div>
+                                    <p class="show-rent-and-day-Class">₹5031*5 nights</p>
+                                    <p class="show-rent-without-tax-Class">
+                                        ₹25,157
+                                    </p>
+                                </div>
+                                <div>
+                                    <p class="Serivce-fee-Class">Serivce Fee</p>
+                                    <p class="Show-serivce-fee-Class">3551</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="show-total-payment-ID">
+                            <p id="totalORdiscount-onpayment-page-ID">
+                                Total
+                            </p>
+                            <p id="total-onpayment-page-ID"> ₹31,727.43 </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </section>
+    </div>
+
+
+    <script type="module" src="../../SCRIPT/payment-process/reserve-payment-Main.js">
+
+
+
+    </script>
+</body>
+
+
+</html>
+
+
+</script>
+
+<script type="module">
+    // Header Importing and Appending
+    import paymentHeader from "../../COMPONENTS/payment-process C/payment-Header.js";
+    let HeaderHere = document.getElementById("payment-header-ID");
+    HeaderHere.innerHTML = "";
+    HeaderHere.innerHTML = paymentHeader();
+
+    // Payment method importing for loged in User and appending
+    import paymentMethod from "../../COMPONENTS/payment-process C/payment-page-component.js";
+    console.log(paymentMethod);
+    var findUser = localStorage.getItem("user_login") || false;
+
+    // if (findUser == true) {
+        
+    // }
+
+    let paymentContainer = document.getElementById("login-or-guest-parent-ID");
+        paymentContainer.innerHTML = "";
+        paymentContainer.innerHTML = paymentMethod();
+
+
+    // document.getElementById("ConfirmPayment-buttom-ID").addEventListener("click", function () {
+    //     window.location.href = "creditCard.html";
+    //     console.log("ramji");
+    // })
+
+    //Promocode here 
+
+    import { totalAmount } from "../../SCRIPT/payment-process/reserve-payment-Main.js"
+    console.log(totalAmount);
+
+    let showPromoCodeInput = false;
+    if (showPromoCodeInput == false) {
+        var promoCodeDiv = document.getElementById("Coupon-code-div-ID");
+        promoCodeDiv.style.display = "none";
+    }
+
+    var promoCodeButton = document.getElementById("have-a-promo-code-a-ID");
+    promoCodeButton.addEventListener("click", addPromoCode);
+
+    function addPromoCode() {
+
+        promoCodeButton.textContent = "Apply Your Code";
+        promoCodeDiv.style.display = "block";
+        promoCodeButton.addEventListener("click", function () {
+
+            let inputValue = document.getElementById("Coupon-code-input-ID").value;
+            console.log("inpout : ", inputValue.toUpperCase())
+            if (inputValue.toUpperCase() == "NEWYEAR") {
+
+                const discountedAmount = totalAmount - (totalAmount / 100 * 10);
+
+                let pTagForTotal = document.getElementById("total-onpayment-page-ID");
+                pTagForTotal.textContent = "₹" + discountedAmount.toFixed(0);
+                pTagForTotal.style.fontSize = "27px";
+                pTagForTotal.style.fontWeight = "800";
+                pTagForTotal.style.color = "#FF5A5F";
+
+                document.getElementById("totalORdiscount-onpayment-page-ID").textContent = "Total After 10% Disount: "
+                document.getElementById("totalORdiscount-onpayment-page-ID").fontWeight = "600";
+
+                promoCodeButton.textContent = "Applied";
+                promoCodeButton.className = "applied";
+            }
+
+
+
+
+
+        });
+
+    }
+</script>
+<script>
+    var editBooking = function () {
+        console.log("alert(Sorry Dear User We Are Working On This Feature)");
+        alert("Sorry dear user we are working on this feature :(");
+    }
+</script>
