@@ -82,8 +82,24 @@ lowerSlider.oninput = function () {
         }
     }
     document.querySelector('#one').value=this.value
-}; 
+};
 
+const navlinkcontainers=[...document.querySelectorAll(
+  "#navlinkcontainer")];
+  console.log("hiii")
+  const nextbtn=[...document.querySelectorAll('#rightspan')];
+  const prebtn=[...document.querySelectorAll('#leftspan')];
+
+  navlinkcontainers.forEach((item ,i)=>{
+let linkdimension=item.getBoundingClientRect();
+let containerwidth=linkdimension.width;
+
+nextbtn[i]=addEventListener("click",()=>{
+  item.scrollLeft+=containerwidth;
+})
+prebtn[i]=addEventListener("click",()=>{
+  item.scrollLeft-=containerwidth;
+})
+  })
 
    
-

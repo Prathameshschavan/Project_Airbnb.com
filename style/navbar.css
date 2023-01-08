@@ -230,7 +230,7 @@
 
  #navlinks {
      display: flex;
-     justify-content: space-around;
+     justify-content: flex-start;
      border-bottom: 1px solid var(--grey);
      padding-bottom: 1%;
      align-items: center;
@@ -241,6 +241,16 @@
      background-color: #fff;
      z-index: -1;
  }
+ #navlinkcontainer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width:89.4%;
+    scroll-behavior: smooth;
+ }
+ #navlinkcontainer::-webkit-scrollbar{
+    display:none;
+ }
  .content{
     padding-top: 1%;
  }
@@ -250,14 +260,14 @@
  }
 
  #navinnerlink {
-     letter-spacing: 0.4px;
-     font-weight: 600;
-     display: grid;
-     justify-items: center;
-     color: #717171;
-     text-decoration: none;
-     font-size: 13px;
- }
+    letter-spacing: 0.4px;
+    font-weight: 600;
+    display: grid;
+    justify-items: center;
+    color: #717171;
+    text-decoration: none;
+    font-size: 13px;
+}
 
  #navinnerlink:hover {
      opacity: 1;
