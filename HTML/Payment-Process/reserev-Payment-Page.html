@@ -169,7 +169,7 @@
     console.log(paymentMethod);
     var findUser = localStorage.getItem("user_login") || false;
 
-    if (findUser == true) {
+    if (findUser == false) {
         let paymentContainer = document.getElementById("login-or-guest-parent-ID");
         paymentContainer.innerHTML = "";
         paymentContainer.innerHTML = paymentMethod();
