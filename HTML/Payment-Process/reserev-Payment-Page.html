@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=sans-serif">
     <link rel="stylesheet" href="../../STYLES/Payment-Process/paymentHeader.css">
     <link rel="stylesheet" href="./../../STYLES/Payment-Process/reserev-Payment-Page.css">
+    <link rel="icon" type="image/png" href="https://a0.muscache.com/airbnb/static/icons/android-icon-192x192-c0465f9f0380893768972a31a614b670.png">
 
 </head>
 
@@ -169,11 +170,13 @@
     console.log(paymentMethod);
     var findUser = localStorage.getItem("user_login") || false;
 
-    if (findUser == true) {
-        let paymentContainer = document.getElementById("login-or-guest-parent-ID");
+    // if (findUser == true) {
+        
+    // }
+
+    let paymentContainer = document.getElementById("login-or-guest-parent-ID");
         paymentContainer.innerHTML = "";
         paymentContainer.innerHTML = paymentMethod();
-    }
 
 
     // document.getElementById("ConfirmPayment-buttom-ID").addEventListener("click", function () {

@@ -295,23 +295,9 @@ height: 52%;
 <script src="https://kit.fontawesome.com/fbdb99c49f.js" crossorigin="anonymous"></script>
 <script>
 
-let Data = [{"image1": "https://a0.muscache.com/im/pictures/miso/Hosting-49678090/original/ec0aed18-0952-43f4-9c49-24a30eac40d3.jpeg?im_w=960", "image2": "https://a0.muscache.com/im/pictures/miso/Hosting-49678090/original/d362c612-4578-4d46-b0c9-6eb3c2b3563f.jpeg?im_w=480", "image3": "https://a0.muscache.com/im/pictures/miso/Hosting-49678090/original/84650a19-c8da-42cc-9086-5a82758996ec.jpeg?im_w=480", "image4": "https://a0.muscache.com/im/pictures/miso/Hosting-49678090/original/ccc0ca48-f0f2-43a0-a8a1-a9d38cce2604.jpeg?im_w=480", "image5": "https://a0.muscache.com/im/pictures/miso/Hosting-49678090/original/75d03d3a-8395-4698-8b48-46d95150be27.jpeg?im_w=480", "name": "Koh Samui, Thailand", "dist": "Ocean and sea views", "date": "6-12 Jan", "price": "₹1,31,607 per night",},
+let Data = JSON.parse(localStorage.getItem("wishlist"))||[];
+console.log(Data);
 
-{"image1": "https://a0.muscache.com/im/pictures/miso/Hosting-35670982/original/fcf2fd80-1b12-47a9-a8b8-92ae16ef40cc.jpeg?im_w=960", "image2": "https://a0.muscache.com/im/pictures/miso/Hosting-35670982/original/c54a2df2-d658-4d81-870a-0d3228069e3c.jpeg?im_w=480", "image3": "https://a0.muscache.com/im/pictures/miso/Hosting-35670982/original/6f9db44c-c864-4c92-9af0-629b88e1ac11.jpeg?im_w=480", "image4": "https://a0.muscache.com/im/pictures/miso/Hosting-35670982/original/a47bfe8d-2192-4045-9d0c-6a94aa7fc4fb.jpeg?im_w=480", "image5": "https://a0.muscache.com/im/pictures/miso/Hosting-35670982/original/104f8442-b220-407f-90c6-11a324b34904.jpeg?im_w=480", "name": "Thalang, Thailand", "dist": "Beach and ocean views", "date": "8-13 Jan", "price": "₹97,540 per night",},
-
-{"image1": "https://a0.muscache.com/im/pictures/miso/Hosting-626503661103872723/original/6c659e6b-2740-4f1d-b895-c67163d54add.jpeg?im_w=960", "image2": "https://a0.muscache.com/im/pictures/miso/Hosting-626503661103872723/original/204e4399-36e3-4c51-8184-da948c5823a8.jpeg?im_w=480", "image3": "https://a0.muscache.com/im/pictures/miso/Hosting-626503661103872723/original/64523c4b-e445-441a-a191-ff8052c3dd67.jpeg?im_w=480", "image4": "https://a0.muscache.com/im/pictures/miso/Hosting-626503661103872723/original/61761c02-7f5d-4acc-80a1-eaa8af79513a.jpeg?im_w=480", "image5": "https://a0.muscache.com/im/pictures/miso/Hosting-626503661103872723/original/797da1fd-c80b-4e96-9657-195115f705c1.jpeg?im_w=480", "name": "Tambon Kamala, Thailand", "dist": "Sea views", "date": "14-19 Jan", "price": "₹83,989 per night",},
-
-{"image1": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-54288147/original/7f738822-cba9-4030-86d8-d3fdfbe10792.jpeg?im_w=960", "image2": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-54288147/original/3e297cfb-7af4-4128-a943-f2ebf3e83181.jpeg?im_w=480", "image3": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-54288147/original/6e9a3911-168e-4bdb-ad80-6bab4b06c541.jpeg?im_w=480", "image4": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-54288147/original/724869d1-8fe6-4d89-96e6-f6a92e311919.jpeg?im_w=480", "image5": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-54288147/original/7558e8ac-acc7-416b-bf1b-801f0f0e92c7.jpeg?im_w=480", "name": "Dubai, UAE", "dist": "Marina views", "date": "14-19 Jan", "price": "₹21,986 per night",},
-    ];
-
-    localStorage.setItem("wishlist_data",JSON.stringify(Data));
-
-
-    let wishlist = JSON.parse(localStorage.getItem("wishlist_data")) || [];
-    console.log(wishlist);
-
-    
-   
     let displaywish = (Data) => {
         document.getElementById("wishlisted_hotels").textContent="";
         Data.map(function(elem,idx) {
@@ -320,6 +306,10 @@ let Data = [{"image1": "https://a0.muscache.com/im/pictures/miso/Hosting-4967809
 
         let firstdiv = document.createElement("div");
         firstdiv.setAttribute("id","image_div");
+        firstdiv.addEventListener("click",function(){
+            localStorage.setItem("detail_data",JSON.stringify(elem));
+    window.location.href="detail.html";
+        })
 
 
         let image1div = document.createElement("div");
@@ -358,17 +348,18 @@ let Data = [{"image1": "https://a0.muscache.com/im/pictures/miso/Hosting-4967809
    
 
     function removeFromWish(elem, idx){
-        wishlist.splice(idx,1);
-        localStorage.setItem("wishlist_data",JSON.stringify(wishlist));
+        Data.splice(idx,1);
+        localStorage.setItem("wishlist_data",JSON.stringify(Data));
         console.log("aalaa");
-        displaywish(wishlist);
+        displaywish(Data);
     }
 
 
+    
 
 
     window.addEventListener("load",()=>{
-        displaywish(wishlist);
+        displaywish(Data);
         
         })
 

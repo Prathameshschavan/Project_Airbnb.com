@@ -2,20 +2,25 @@
     margin: 0px;
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
     /* border: 1px solid red; */
+    /* color: #b6bac5; */
 }
 #product_page_main_div{
     display: grid;
     grid-template-columns: repeat(4,1fr);
     padding-left: 30px;
     padding-right: 30px;
-    /* border: 1px solid red; */
-    gap: 20px;
+    /* border: 2px solid red; */
+    /* width: 95%; */
+    gap: 30px;
+    margin: auto;
+    padding-left: 50px;
+    overflow-x: hidden;
     /* width: 100%; */
     
 }
  img{
     width: 100%;
-    height: 280px;
+    height: 300px;
     border-radius: 12px;
     margin: auto;
     text-align: center;
@@ -24,8 +29,8 @@
 
  #div_for_heart{
    position: absolute;
-   bottom: 240px;
-   right: 7px;
+   bottom: 260px;
+   right: 5px;
    /* background-color: ; */
    color:rgb(38,37,37) ;
    /* border: 2px solid white;  */
@@ -56,6 +61,8 @@
  #div_forimg_dname{
    /* border: 1px solid black; */
    margin-top: 25px;
+   /* width: 95%; */
+   height: 1100%;
    /* border: 1px solid red; */
  }
  #div_for_name_details{
@@ -85,13 +92,14 @@
 
  #product_page_showmap{
   position: fixed;
-  top: 500px;
+  bottom: 100px;
   height: 35px;
   background-color: #222222;
   border: none;
   border-radius: 30px;
   color: white;
-  margin-left: 45%;
+  margin-left: 50%;
+  /* margin: auto; */
   padding-bottom: 34px;
   font-size: medium;
   padding-left: 25px;
@@ -101,12 +109,14 @@
  }
  footer{
   position: fixed;
-  top: 582px;
+  bottom: 0;
   background-color: rgb(255,255,255);
   display: flex;
   justify-content: space-between;
   border: 0.5px solid #dddddd;
   width: 100%;
+
+
   
  }
  #footer_part2{
@@ -136,10 +146,8 @@
   
  }
 
- @media screen and  (max-width: 1115px) and (min-width :997px ) {
+ @media screen and  (max-width: 1115px) and (min-width :950px ) {
   #product_page_main_div{
-   
-
     grid-template-columns: repeat(3,1fr);
     
 }
@@ -153,7 +161,7 @@
 }
 
 
-@media screen and   (max-width: 997px) and (min-width: 695px){
+@media screen and   (max-width: 950px) and (min-width: 550px){
   #product_page_main_div{
    
     grid-template-columns: repeat(2,1fr);
@@ -168,7 +176,7 @@
  
 
 
-@media screen and   (max-width: 695px)  and (min-width: 10px){
+@media screen and   (max-width: 550px)  and (min-width: 10px){
   #product_page_main_div{
    
     grid-template-columns: repeat(1,1fr);

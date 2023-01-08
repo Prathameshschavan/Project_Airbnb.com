@@ -1,6 +1,8 @@
 *{
     margin: 0;
 }
+
+
 #details_Navbar{
     /* border: 2px solid red; */
     display: flex;
@@ -12,6 +14,7 @@
 
 #details_Navbar>div:nth-child(1) img{
 width: 70%;
+cursor: pointer;
 }
 
 #details_Navbar>div:nth-child(1){
