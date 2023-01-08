@@ -53,23 +53,33 @@
                           <!-- <label for="select">cunotry/Rigion</label> -->
                           <select class="form" aria-label="Default select example">
                             <option selected>United States(+1)</option>
-                            <option value="1"></option>
-                            <option value="2"></option>
-                            <option value="4"></option>
-                            <option value="5"></option>
-                            <option value="6"></option>
-                            <option value="7"></option>
-                            <option value="8"></option>
-                            <option value="9"></option>
-                            <option value="10"></option>
-                            <option value="12"></option>
-                            <option value="13"></option>
-                            <option value="14"></option>
-                            <option value="15"></option>
-                            <option value="16"></option>
-                            <option value="17"></option>
-                            <option value="18"></option>
-                            <option value="19"></option>
+                            <option value="1">Afghanistan (+93)</option>
+                            <option value="2">Algeria (+355)</option>
+                            <option value="4">Australia (+61)</option>
+                            <option value="5">Bahamas (+1)</option>
+                            <option value="6">Bangladesh (+880)</option>
+                            <option value="7">Belgium (+32)</option>
+                            <option value="8">Bhutan (+975)</option>
+                            <option value="9">Brazil (+55)</option>
+                            <option value="10">Combodiya (+855)</option>
+                            <option value="10">Canada (+1)</option>
+                            <option value="10">China (+86)</option>
+                            <option value="10">Colombia (+57)</option>
+                            <option value="10">Denmark (+45</option>
+                            <option value="10">Finland (+358)</option>
+                            <option value="10">France (+33)</option>
+                            <option value="10">Gremany (+49)</option>
+                            <option value="10">Greenland (+299)</option>
+                            <option value="10">Hong kong (+852)</option>
+                            <option value="10">Ice land (+354)</option>
+                            <option value="10">India (+91)</option>
+                            <option value="10">Indonesia (+62)</option>
+                            <option value="10">Iraq (+964)</option>
+                            <option value="10">Italy (+39)</option>
+                            <option value="10">Japan (+81)</option>
+                            <option value="10">Kazakhastan (+7)</option>
+                            <option value="10">Kuwait (+965)</option>
+                            <option value="10">Laos (+856)</option>
                           </select>
                           <br>
                           <input id="loginnumber" type="text" placeholder="PhoneNumber">
@@ -126,9 +136,11 @@
           <!-- ----------otp page-------------- -->
                 <div id="Otp_Block">
                   <div class="otp-modal">
-                    <button id="" class="closeotp" type="">X</button>
-                    <i class="fa-solid fa-chevron-left"></i>
-                    <h4>Confirm your number</h4>
+                    <div id="otp_first_div_close">
+                        <button id="" class="closeotp" type=""><i class="fa-solid fa-chevron-left"></i></button>
+                        <h4>Confirm your number</h4>
+                    </div>
+                    
                     <div>
                       <p>
                         Enter the code we've sent via SMS to +91 9860208367:
@@ -141,7 +153,7 @@
                     </div>
                     <hr>
                  
-                    <hr>
+                    
                     <div>
                       <p><u><b>More options</b></u></p>
                       <button id="otp_continue_btn">Continue</button>
@@ -154,7 +166,7 @@
                 <div class="mainpage">
                   <div id="mainfirst">
                       <div id="tophead">
-                          <button id="head" type="button" class="closeregister"><i class="fa-solid fa-angle-left"></i></button>
+                          <div id="head" type="button" class="closeregister"><i class="fa-solid fa-angle-left"></i></div>
                           <h3>Finish Signing up</h3>
                       </div>
                       <div id="inputsection">
@@ -211,10 +223,10 @@
                     <a id="navinnerlink" class="item" href=""><img src="../img/cs.jpg" alt="">countrySide</a>
                     <a id="navinnerlink" class="item" href=""><img src="../img/hs.jpg" alt="">Treehouses</a>
                     <a id="navinnerlink" class="item" href=""><img src="../img/break.jpg" alt="">Bed and Breakfast</a>
-                    <a id="navinnerlink" class="item" href=""><img src="../img/h2.jpg" alt="">Farms</a>
+                    <a id="navinnerlink" class="Castels" href=""><img src="../img/h2.jpg" alt="">Farms</a>
                     <a id="navinnerlink" class="item" href=""><img src="../img/pr.jpg" alt="">Private rooms</a>
                     <a id="navinnerlink" class="item" href=""><img src="../img/ap.jpg" alt="">Amazing Pools</a>
-                    <a id="navinnerlink" class="item" href=""><img src="../img/av.jpg" alt="">Amazing Views</a>
+                    <a id="navinnerlink" class="Amaze" href=""><img src="../img/av.jpg" alt="">Amazing Views</a>
                     <a id="navinnerlink" class="item" href=""><img src="../img/h2.jpg" alt="">Historical homes</a>
                     <a id="navinnerlink" class="item" href=""><img src="../img/omg.jpg" alt="">OMG!</a>
                     <!-- <a id="navinnerlink" class="item" href=""><img src="../img/bf.jpg" alt="">Beachfront</a>
@@ -257,13 +269,13 @@
                         <div class="price-container">
                           <div class="price-wrap-1">
                             <h5>min price</h5>
-                            <label for="one">$</label>
+                            <label for="one">₹</label>
                             <input id="one">
                           </div>
                           <div class="price-wrap_line"></div>
                           <div class="price-wrap-2">
                             <h5>max price</h5>
-                            <label for="two">$</label>
+                            <label for="two">₹</label>
                             <input id="two">
           
                           </div>
@@ -444,7 +456,7 @@
           
                 <div class="modelinnerpart">
                   <a href="">Clear all</a>
-                  <button>Show Homes</button>
+                  <button id="Show_homes">Show Homes</button>
                 </div>
               </div>
             </div>
@@ -516,7 +528,33 @@
     }
   
     document.getElementById('sign-button').addEventListener('click', function () {
-      document.querySelector('.bg-modal').style.display = 'flex';
+      let status =localStorage.getItem("userLoginStatus");
+      
+        console.log(status);
+        if(status=="true"){
+            document.getElementById("login_btn").textContent="Log Out";
+            localStorage.setItem("userLoginStatus","false");
+            window.location.reload();
+        }
+        else{
+          document.querySelector('.bg-modal').style.display = 'flex';
+        }
+    });
+
+    document.getElementById('login_btn').addEventListener('click', function () {
+      event.preventDefault();
+      let status =localStorage.getItem("userLoginStatus");
+      
+      
+        console.log(status);
+        if(status=="true"){
+            document.getElementById("login_btn").textContent="log Out";
+            localStorage.setItem("userLoginStatus","false");
+            window.location.reload();
+        }
+        else{
+          document.querySelector('.bg-modal').style.display = 'flex';
+        }
     });
   
     document.querySelector('.close').addEventListener('click', function () {
@@ -533,8 +571,8 @@
       document.querySelector('#Otp_Block').style.display = 'none';
     });
     document.getElementById('otp_continue_btn').addEventListener('click', function () {
-      document.querySelector('.mainpage').style.display = 'flex';
-      document.querySelector('#Otp_Block').style.display = 'none';
+      // document.querySelector('.mainpage').style.display = 'flex';
+      // document.querySelector('#Otp_Block').style.display = 'none';
     });
   
     document.querySelector('.closeregister').addEventListener('click', function () {
@@ -542,41 +580,41 @@
     });
     
     // ----------------signup---------------------------------
-    document.getElementById("signinContinuebtn").addEventListener("click", getData)
-    var numberArray = JSON.parse(localStorage.getItem("usernumbers")) || [];
+    // document.getElementById("signinContinuebtn").addEventListener("click", getData)
+    // var numberArray = JSON.parse(localStorage.getItem("usernumbers")) || [];
   
-    function getData() {
-      var number = document.getElementById("loginnumber").value;
-      numberArray.push(number);
-      localStorage.setItem("usernumbers", JSON.stringify(numberArray));
-      let otp = getOtp(100000, 999999);
-      otp = otp.toFixed(0);
-      console.log(otp);
+    // function getData() {
+    //   var number = document.getElementById("loginnumber").value;
+    //   numberArray.push(number);
+    //   localStorage.setItem("usernumbers", JSON.stringify(numberArray));
+    //   let otp = getOtp(100000, 999999);
+    //   otp = otp.toFixed(0);
+    //   console.log(otp);
   
-    }
-    function getOtp(min, max) {
-      return Math.random() * (max - min + 1) + min;
-    }
+    // }
+    // function getOtp(min, max) {
+    //   return Math.random() * (max - min + 1) + min;
+    // }
   // ----------otp page-----------------------------------------
-  document.getElementById("otp_continue_btn").addEventListener("click",getOTP);
+  // document.getElementById("otp_continue_btn").addEventListener("click",getOTP);
   
-      function getOTP(){
-          let otp = 123456;
+  //     function getOTP(){
+  //         let otp = 123456;
   
-          let input = document.getElementById("Otp").value;
+  //         let input = document.getElementById("Otp").value;
   
-          if(input==otp){
+  //         if(input==otp){
   
-          }
-          else{
-             document.getElementById("error").style.display="flex"
-          }
-      }
-      function getO(min, max) {
-    return Math.random() * (max - min +1) + min;
-  }
+  //         }
+  //         else{
+  //            document.getElementById("error").style.display="flex"
+  //         }
+  //     }
+  //     function getO(min, max) {
+  //   return Math.random() * (max - min +1) + min;
+  // }
   
-   let ans =getO(100000,999999);
-  console.log(ans.toFixed(0));
+  //  let ans =getO(100000,999999);
+  // console.log(ans.toFixed(0));
   </script>
   <script src="../script/index.js"></script>

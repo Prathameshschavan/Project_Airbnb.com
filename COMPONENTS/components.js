@@ -15,9 +15,9 @@ const Header=()=>{
     <div id="profiletoggle"><i class="fa fa-bars"></i><span><i class="fa fa-user"></i></span></div>
     <div id="profilemodal">
     <div><a id="sign-button" class="button">Sign up</a></div>
-    <div><a href="">Log in</a></div>
+    <div><a href="" id="login_btn">Log in</a></div>
     </hr>
-    <div><a href="">Airbnb your home</a></div>
+    <div><a href="wishList.html" id="wishlist_btn">Airbnb your home</a></div>
     <div><a href="">Host an Experience</a></div>
     <div><a href="">Help</a></div>
     </div>

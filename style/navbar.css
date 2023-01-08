@@ -937,10 +937,10 @@
 }
 .bg-modal{
     width: 100%;
-    height: 100%;
-    /* position: absolute; */
+    height: 110vh;
+    position: absolute;
     background-color: rgb(0, 0, 0, 0.8);
-    top: 0;
+    top: -30px;
     justify-content: center;
     align-items: center;
     display: none;
@@ -951,8 +951,10 @@
     height: 88%;
     background: white;
     border-radius: 4px;
-    position: relative;
+    position: fixed;
     padding-left: 24px;
+    /* margin-top: 500px; */
+    
 }
 .mid{
     overflow-y: scroll;
@@ -983,46 +985,92 @@
 #Otp_Block{
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     background-color: rgb(0, 0, 0, 0.8);
     top: 0;
     justify-content: center;
     align-items: center;
     display: none;
+    /* border: 2px solid red; */
 
 }
 #Otp_Block .otp-modal {
     width: 50%;
     /* height: 88%; */
     background: white;
-    border-radius: 4px;
+    border-radius: 10px;
     position: relative;
-    padding-left: 24px;
+    padding:20px 0px 20px 0px;
+    /* border: 2px solid red; */
 }
 #Otp_Block .otp-modal:first-child>i{
     /* border: 1px solid red; */
     padding: 7px 9px;
     border-radius: 20px;
+    /* border: 2px solid red; */
 }
 
 #Otp_Block .otp-modal:first-child>i:hover{
     background-color: #eeeded;
 }
 
-#Otp_Block .otp-modal:nth-child(3){
+#otp_first_div_close {
+    display: flex;
+    gap: 35%;
+    width: 100%;
+    padding-bottom: 4%;
+    padding: 0 0 20px 24px;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+
+#otp_first_div_close>button{
+    border: none;
+    background-color: white;
+}
+
+#Otp_Block .otp-modal>:nth-child(2){
     padding-left:25px;
     /* border: 2px solid  blue; */
     font-size: 15px;
+    /* border: 2px solid red; */
+    padding-top: 30px;
+    padding-bottom: 30px;
+   
 }
 
-#Otp_Block>hr:nth-child(2){
-    margin:-10px 0  10px 0;
+#Otp_Block .otp-modal>:nth-child(2) *{
+    margin-top: 5px
+}
+
+#Otp_Block .otp-modal>:nth-child(2)>div{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+#Otp_Block .otp-modal>:nth-child(4){
+    /* border: 2px solid red; */
+    padding-left:25px;
+    padding-right:25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+#Otp_Block .otp-modal>:nth-child(4) > button{
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    background-color: #222222;
+    border: none;
+    font-weight: 600;
 }
 
 #Otp{
     border-radius: 10px;
     font-size: 18px;
-    width: 33%;
+    width:24%;
     padding: 15px ;
     letter-spacing:20px;
    color: rgb(94, 93, 93);
@@ -1033,13 +1081,13 @@
 #Otp_Block .otp-modal:nth-child(3)>div{
 display: none;
 align-items: center;
-/* border: 1px solid #010101; */
+border: 1px solid #010101;
 margin-top: -10px;
 color: red ;
 gap: 10px;
 }
 
-#Otp_Block .otp-modal:nth-child(3)>p{
+#Otp_Block .otp-modal>:nth-child(3)>p{
 margin-bottom: 25px;
 }
 
@@ -1066,7 +1114,7 @@ background-color: #0c0c0c;
 /* ---------------------finishregister----------------- */
 .mainpage{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: absolute;
     background-color: rgb(0, 0, 0, 0.8);
     top: 0;
@@ -1076,25 +1124,38 @@ background-color: #0c0c0c;
 
 }
 #mainfirst{
-    width: 50%;
-    height: 88%;
+    font-size: 10px;
+    width: 35%;
+    height: 90%;
     background: white;
     border-radius: 4px;
-    position: relative;
-    padding-left: 24px;
+    position: fixed; 
+    padding-bottom: 30px;
+}
+
+#mainfirst u{
+    color: rgb(0, 149, 255);
+    font-weight: 600;
 }
 #tophead {
-    text-align: center;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    /* text-align: center; */
+    display: flex;
+    /* grid-template-columns: repeat(2, 1fr); */
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    padding-left: 30px;
+    padding-left: 20px;
+    gap: 140px;
+    /* justify-content: space-around; */
+    /* border: 2px solid red; */
+    align-items: center;
     margin-bottom: 20px;
 }
 
-#tophead h3 {
-    margin-left: -120%;
+#tophead>div {
+    /* border: 2px solid red; */
+    margin-bottom: 15px;
+    font-size: 10px;
 }
+
 
 #head {
     width: 10%;
@@ -1102,6 +1163,7 @@ background-color: #0c0c0c;
     margin-top: 20px;
     border: none;
     background-color: rgb(255, 255, 255);
+    /* border: 2px solid red; */
 
 }
 
@@ -1112,6 +1174,7 @@ background-color: #0c0c0c;
     font-size: 17px;
     padding-left: 20px;
     border: 1px solid gray;
+    /* border: 2px solid red; */
 
 }
 
@@ -1122,6 +1185,7 @@ background-color: #0c0c0c;
     border: 1px solid gray;
     font-size: 17px;
     padding-left: 20px;
+    margin-bottom: 5px;
 }
 
 #date {
@@ -1132,6 +1196,8 @@ background-color: #0c0c0c;
     font-size: 17px;
     padding-left: 20px;
     padding-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 #lastbox {
@@ -1141,12 +1207,11 @@ background-color: #0c0c0c;
     border: 1px solid gray;
     font-size: 17px;
     padding-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
-/* #lastbox{
 
-
-} */
 #registerbtn {
     width: 95%;
     height: 50px;

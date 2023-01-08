@@ -228,12 +228,31 @@
 let Amazing_view = JSON.parse(localStorage.getItem("Amazing_view")) || [];
 let Castel = JSON.parse(localStorage.getItem("Castel")) || [];
 
+let  curr_display_data = [];
+
+document.querySelector(".Amaze").addEventListener("click",function(){
+    event.preventDefault();
+    append(Amazing_view);
+    console.log(Amazing_view);
+    curr_display_data=Amazing_view;
+})
+
+document.querySelector(".Castels").addEventListener("click",function(){
+    append(Castel);
+    console.log(Castel);
+    curr_display_data=Castel;
+    event.preventDefault();
+
+})
+
+
 // localStorage.setItem("Amazing_view",JSON.stringify(Data));
 // localStorage.setItem("Castel",JSON.stringify(castel));
 
 
 var wishlist_data = JSON.parse(localStorage.getItem("wishlist"))|| [];
 function append( Data){
+    document.getElementById("product_page_main_div").innerHTML="";
 Data.map((ele,idx) => {
 
     
@@ -362,4 +381,196 @@ document.getElementById("content").style.overflow="hidden";
    
 // })
 append(Amazing_view);
+
+// signUp.html JavaScript -->                
+document.getElementById("signinContinuebtn").addEventListener("click", getData)
+var numberArray = JSON.parse(localStorage.getItem("usernumbers")) || [];
+let ans;
+function getData() {
+    var number = document.getElementById("loginnumber").value;
+    localStorage.setItem("sendToRegister", false);
+    numberArray.forEach(element => {
+        if (element == number) {
+            console.log("sendToRegister chal gaya", element, number)
+            localStorage.setItem("sendToRegister", true);
+        }
+    });
+    setTimeout(function () {
+        tranferToOtp();
+        function getOtp(min, max) {
+            return Math.random() * (max - min + 1) + min;
+        }
+    
+         ans = getOtp(100000, 999999).toFixed(0);
+        setTimeout(function () {
+            alert(ans);
+        }, 1000)
+
+    }, 1000)
+
+
+
+
+    // let otp = getOtp(100000, 999999);
+    // otp = otp.toFixed(0);
+    // console.log(otp);
+
+}
+// function getOtp(min, max) {
+//     return Math.random() * (max - min + 1) + min;
+// }
+
+let curr_number;
+
+function tranferToOtp() {
+
+    var userMobile = document.getElementById("loginnumber").value;
+
+    curr_number=userMobile;
+    localStorage.setItem("userMobile1", userMobile);
+
+    numberArray.push(userMobile);
+
+    localStorage.setItem("usernumbers", JSON.stringify(numberArray));
+    // window.location.href = "./OtpForUser.html";
+
+}
+
+
+/////////////////////////////////////////////////////////////////////////////
+
+// rough.html name change to otpForUser.html ---js--->       
+    document.getElementById("error").style.display = "none"
+    // function getOtp(min, max) {
+    //     return Math.random() * (max - min + 1) + min;
+    // }
+
+    // let ans = getOtp(100000, 999999).toFixed(0);
+    // setTimeout(function () {
+    //     alert(ans);
+    // }, 1000)
+    // console.log(ans);
+
+
+    document.getElementById("otp_continue_btn").addEventListener("click", checkOtp);
+
+    function checkOtp() {
+        let otp = ans;
+        console.log(otp, ans,"checking otppp");
+        
+        var sendToRegisters = localStorage.getItem("sendToRegister");
+
+        
+        let input = document.getElementById("Otp").value;
+
+        if (input == otp) {
+            console.log("valid OTP");
+
+            console.log("sendtoregister: ", sendToRegisters);
+
+            if (sendToRegisters == "false") {
+
+                console.log("register")
+
+                setTimeout(function () {
+                    // window.location.href = "./register.html";
+                    document.querySelector('.mainpage').style.display = 'flex';
+                    document.querySelector('#Otp_Block').style.display = 'none';
+                }, 1000)
+
+
+            } else if (sendToRegisters == "true") {
+
+                console.log("products");
+                setTimeout(function () {
+                    window.location.href = "./product_P.html";
+                    localStorage.setItem("userLoginStatus",true);
+
+                    let mobileNumber = JSON.parse(localStorage.getItem("user_data")) || [];
+
+                    let curr_data =mobileNumber.filter((elem)=>{
+                        return elem.mobile ==curr_number;
+                        })
+            
+               localStorage.setItem("curr_data",JSON.stringify(curr_data));
+                }, 1000)
+
+            }
+
+        }
+        else {
+            console.log(input)
+            document.getElementById("error").style.display = "flex"
+        }
+
+      
+
+    }
+
+
+
+
+    //////////////////////////////////////////////////////////////////////////
+
+    var userDataArray = JSON.parse(localStorage.getItem("user_data")) || [];
+    document.getElementById("registerbtn").addEventListener("click", function () {
+        var name = document.getElementById("name").value + " " + document.getElementById("last").value;
+
+
+        var email = document.getElementById("lastbox").value;
+        var userMobile1 = localStorage.getItem("userMobile1");
+
+        function userMake(name, email, mobile) {
+            this.name = name;
+            this.email = email;
+            this.mobile = mobile
+        }
+        var newUser = new userMake(name, email, userMobile1);
+        console.log("newUser: ", newUser, name, email, userMobile1);
+        userDataArray.push(newUser);
+        localStorage.setItem("user_data", JSON.stringify(userDataArray));
+        setTimeout(function () {
+            window.location.href = "./product_P.html";
+            localStorage.setItem("userLoginStatus",true);
+        }, 1000)
+    })
+
+    window.addEventListener("load",() =>{
+        document.getElementById("error").style.display = "none"
+        
+        let status =localStorage.getItem("userLoginStatus");
+        let current_data = JSON.parse(localStorage.getItem("curr_data"))  || {};
+        console.log(status);
+        console.log(current_data);
+        if(status=="true"){
+            document.getElementById("sign-button").textContent=current_data[0].name;
+            document.getElementById("login_btn").textContent="log Out";
+            document.getElementById("wishlist_btn").textContent="WishList";
+        }
+    })
+
+
+    // document.getElementById("wishlist_btn").addEventListener("click",gotowishlist)
+    
+    // function gotowishlist (){
+    //     event.preventDefault();
+    //     console.log("wishlist dekh");
+    //     window.location.href="wishList.html";
+    // };
+
+
+   
+    
+
+
+    document.getElementById("Show_homes").addEventListener("click",filterHomes)
+
+    function filterHomes(){
+        let uppper =document.getElementById("upper");
+        let lower = document.getElementById("lower");
+
+    }
+
+
+
 

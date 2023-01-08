@@ -349,7 +349,7 @@ console.log(Data);
 
     function removeFromWish(elem, idx){
         Data.splice(idx,1);
-        localStorage.setItem("wishlist_data",JSON.stringify(Data));
+        localStorage.setItem("wishlist",JSON.stringify(Data));
         console.log("aalaa");
         displaywish(Data);
     }
