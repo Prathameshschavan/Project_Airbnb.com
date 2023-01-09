@@ -86,7 +86,7 @@ lowerSlider.oninput = function () {
 
 const navlinkcontainers=[...document.querySelectorAll(
   "#navlinkcontainer")];
-  console.log("hiii")
+
   const nextbtn=[...document.querySelectorAll('#rightspan')];
   const prebtn=[...document.querySelectorAll('#leftspan')];
 
