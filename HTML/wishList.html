@@ -204,13 +204,18 @@ height: 52%;
     /* border: 2px solid red; */
     width: 15%;
 }
+
+#logoIcon{
+  cursor: pointer;
+  /* border: 2px solid red; */
+}
     </style>
 </head>
 <body>
 
     <div id="details_Navbar">
-        <div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/1200px-Airbnb_Logo_B%C3%A9lo.svg.png" alt="logo">
+        <div id="logoIcon">
+            <img id="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/1200px-Airbnb_Logo_B%C3%A9lo.svg.png" alt="logo">
         </div>
 
         <div>
@@ -364,7 +369,9 @@ console.log(Data);
         })
 
 
-   
+   document.getElementById("logoIcon").addEventListener("click",function(){
+     window.location.href="index.html";
+   })
 
 
  

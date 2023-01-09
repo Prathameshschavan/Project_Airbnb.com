@@ -78,7 +78,7 @@
                         <div id="for-guest-ID">
                             <p>Log in or Sign up to book</p>
                             <div id="Continue-button-div-ID">
-                                <a href="./../product_P.html"><button>Continue</button></a>
+                                <a href="./../index.html"><button>Continue</button></a>
                             </div>
                             <div>
                                 <a href="./../login.html"><img src="https://imgpile.com/images/dRCXvl.png"
@@ -167,10 +167,11 @@
 
     // Payment method importing for loged in User and appending
     import paymentMethod from "../../COMPONENTS/payment-process C/payment-page-component.js";
-    console.log(paymentMethod);
+    // console.log(paymentMethod);
     var findUser = localStorage.getItem("userLoginStatus") || false;
+    console.log(findUser);
 
-    if (findUser == true) {
+    if (findUser == "true") {
         let paymentContainer = document.getElementById("login-or-guest-parent-ID");
         paymentContainer.innerHTML = "";
         paymentContainer.innerHTML = paymentMethod();

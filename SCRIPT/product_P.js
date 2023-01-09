@@ -234,13 +234,12 @@ document.querySelector(".Amaze").addEventListener("click",function(){
     event.preventDefault();
     append(Amazing_view);
     console.log(Amazing_view);
-    curr_display_data=Amazing_view;
+    
 })
 
 document.querySelector(".Castels").addEventListener("click",function(){
     append(Castel);
     console.log(Castel);
-    curr_display_data=Castel;
     event.preventDefault();
 
 })
@@ -252,6 +251,7 @@ document.querySelector(".Castels").addEventListener("click",function(){
 
 var wishlist_data = JSON.parse(localStorage.getItem("wishlist"))|| [];
 function append( Data){
+    curr_display_data= Data
     document.getElementById("product_page_main_div").innerHTML="";
 Data.map((ele,idx) => {
 
@@ -364,10 +364,10 @@ else if(ele.wishlist=="true"){
 
  document.getElementById("product_page_main_div").append(div);
 
- document.querySelector(".first_card").addEventListener("click",function(){
-    localStorage.setItem("detail_data",JSON.stringify(ele));
-    window.location.href="detail.html";
-})
+//  document.querySelector(".first_card").addEventListener("click",function(){
+//     localStorage.setItem("detail_data",JSON.stringify(ele));
+//     window.location.href="detail.html";
+// })
 
 });
     
@@ -403,13 +403,10 @@ function getData() {
     
          ans = getOtp(100000, 999999).toFixed(0);
         setTimeout(function () {
-            alert(ans);
+            alert(`Your Otp is  `+ans);
         }, 1000)
 
     }, 1000)
-
-
-
 
     // let otp = getOtp(100000, 999999);
     // otp = otp.toFixed(0);
@@ -483,7 +480,7 @@ function tranferToOtp() {
 
                 console.log("products");
                 setTimeout(function () {
-                    window.location.href = "./product_P.html";
+                    window.location.href = "./index.html";
                     localStorage.setItem("userLoginStatus",true);
 
                     let mobileNumber = JSON.parse(localStorage.getItem("user_data")) || [];
@@ -530,7 +527,7 @@ function tranferToOtp() {
         userDataArray.push(newUser);
         localStorage.setItem("user_data", JSON.stringify(userDataArray));
         setTimeout(function () {
-            window.location.href = "./product_P.html";
+            window.location.href = "./index.html";
             localStorage.setItem("userLoginStatus",true);
         }, 1000)
     })
@@ -566,8 +563,27 @@ function tranferToOtp() {
     document.getElementById("Show_homes").addEventListener("click",filterHomes)
 
     function filterHomes(){
-        let uppper =document.getElementById("upper");
-        let lower = document.getElementById("lower");
+        // console.log("heyyyyyyyy");
+        let upper =document.getElementById("upper").value;
+        let lower = document.getElementById("lower").value;
+        console.log(upper,lower);
+        console.log(curr_display_data);
+
+        let filteredData= curr_display_data.filter(function(elem){
+
+            let price = elem.price;
+            price= price.replace("₹","");
+            price= price.replace(",","");
+            price= price.replace(" ","");
+            price= price.replace("per","");
+            price= price.replace("night","");
+            price= price.replace(",","");
+
+            console.log(price);
+            return price>=lower && price<=upper;
+        })
+
+        append(filteredData);
 
     }
 
