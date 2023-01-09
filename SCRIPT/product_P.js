@@ -480,7 +480,7 @@ function tranferToOtp() {
 
                 console.log("products");
                 setTimeout(function () {
-                    window.location.href = "./index.html";
+                    window.location.href = "./product.html";
                     localStorage.setItem("userLoginStatus",true);
 
                     let mobileNumber = JSON.parse(localStorage.getItem("user_data")) || [];
@@ -527,7 +527,7 @@ function tranferToOtp() {
         userDataArray.push(newUser);
         localStorage.setItem("user_data", JSON.stringify(userDataArray));
         setTimeout(function () {
-            window.location.href = "./index.html";
+            window.location.href = "./product.html";
             localStorage.setItem("userLoginStatus",true);
         }, 1000)
     })

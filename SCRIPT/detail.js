@@ -27,5 +27,5 @@ display();
 console.log("object");
 
 document.getElementById("navbar_logo").addEventListener("click",()=>{
-    window.location.href="/Project_Airbnb.com/HTML/index.html"
+    window.location.href="/Project_Airbnb.com/HTML/product.html"
 })

@@ -1,5 +1,5 @@
 const Header=()=>{
-    return  `<div><a href="index.html"><img id="navbarlogo" src="../img/long-logo.png" alt=""></a></div>
+    return  `<div><a href="product.html"><img id="navbarlogo" src="../img/long-logo.png" alt=""></a></div>
     <div class="searchbar">
     <div id="searchbartext">Anywhere</div>
     <div id="searchbartext">Any Week</div>
