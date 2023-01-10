@@ -225,6 +225,9 @@
 // {"image1": "https://a0.muscache.com/im/pictures/4b1d22d9-9ddf-4b3b-86bf-c27e1d8711e0.jpg?im_w=960", "image2": "https://a0.muscache.com/im/pictures/430a0e9e-c125-4640-9138-bed56ebf3910.jpg?im_w=480", "image3": "https://a0.muscache.com/im/pictures/98ea494d-bfb2-4b4a-bd1e-588d404f338e.jpg?im_w=480", "image4": "https://a0.muscache.com/im/pictures/b345dad5-fbba-4c53-8f0f-af1b6b9fe395.jpg?im_w=480", "image5": "https://a0.muscache.com/im/pictures/2802c21b-14c2-4d0d-9f68-30342f8cd1d1.jpg?im_w=480", "name": "Mikra Mantinia Greece", "dist": "5,158 kilometers away", "date": "2-7 Apr", "price": "₹34,730 night","rating":"5.0", "wishlist":"false",},
 // ]
 
+// localStorage.setItem("Amazing_view",JSON.stringify(Data));
+// localStorage.setItem("Castel",JSON.stringify(castel));
+
 let Amazing_view = JSON.parse(localStorage.getItem("Amazing_view")) || [];
 let Castel = JSON.parse(localStorage.getItem("Castel")) || [];
 
@@ -566,6 +569,8 @@ function tranferToOtp() {
         // console.log("heyyyyyyyy");
         let upper =document.getElementById("upper").value;
         let lower = document.getElementById("lower").value;
+        lower=parseInt(lower);
+        upper=parseInt(upper);
         console.log(upper,lower);
         console.log(curr_display_data);
 
@@ -578,10 +583,11 @@ function tranferToOtp() {
             price= price.replace("per","");
             price= price.replace("night","");
             price= price.replace(",","");
-
+            price=parseInt(price);
             console.log(price);
             return price>=lower && price<=upper;
         })
+        console.log(filteredData);
 
         append(filteredData);
 

@@ -820,8 +820,10 @@
     position: relative;
 }
 #signor {
-    text-align: center;
+    /* text-align: center; */
+    padding-left: 45%;
     font-weight: 600;
+    /* border: 2px solid red; */
     margin: -3% 0;
 }
 
@@ -844,6 +846,7 @@
     width: 95.4%;
     height: 55px;
     border-radius: 10px 10px 0 0;
+    padding-left: 25px
 }
 .main select {
     font-size: 17px;
@@ -952,7 +955,7 @@
 }
 .content-modal {
     width: 38%;
-    height: 88%;
+    height: 81%;
     background: white;
     border-radius: 4px;
     position: fixed;
