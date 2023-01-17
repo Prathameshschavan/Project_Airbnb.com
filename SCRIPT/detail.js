@@ -2,7 +2,7 @@
 document.getElementById("reserve_btn").addEventListener("click",goToPayment)
 
 function goToPayment(){
-    window.location.href="/Project_Airbnb.com/HTML/Payment-Process/reserev-Payment-Page.html"
+    window.location.href="../HTML/Payment-Process/reserev-Payment-Page.html"
 }
 
 function display(){
@@ -27,5 +27,5 @@ display();
 console.log("object");
 
 document.getElementById("navbar_logo").addEventListener("click",()=>{
-    window.location.href="/Project_Airbnb.com/HTML/product.html"
+    window.location.href="../HTML/product.html"
 })

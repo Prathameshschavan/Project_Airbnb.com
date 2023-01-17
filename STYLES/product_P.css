@@ -75,7 +75,7 @@
  #div_forimg_dname{
    /* border: 1px solid black; */
    margin-top: 25px;
-   /* z-index: -1; */
+   z-index: -1;
    /* width: 95%; */
    height: 100%;
    /* border: 1px solid red; */
