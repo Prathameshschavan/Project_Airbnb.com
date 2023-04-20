@@ -75,10 +75,16 @@
  #div_forimg_dname{
    /* border: 1px solid black; */
    margin-top: 25px;
-   z-index: -1;
+   /* z-index: -1; */
    /* width: 95%; */
    height: 100%;
    /* border: 1px solid red; */
+ }
+
+ #div_forimg_dname img{
+  /* border: 2px solid red; */
+  position: relative;
+  z-index: -1;
  }
  #div_for_name_details{
    /* border: 1px solid black;  */
